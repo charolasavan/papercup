@@ -1,0 +1,180 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import gsap from 'gsap';
+
+const slides = [
+  {
+    id: 1,
+    title: 'Premium Paper Cups',
+    subtitle: 'Eco-Friendly Solutions for Your Business',
+    description: 'Leading manufacturer and exporter of high-quality paper cups worldwide',
+    image: 'https://images.pexels.com/photos/6347720/pexels-photo-6347720.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  },
+  {
+    id: 2,
+    title: 'Global Export Excellence',
+    subtitle: 'Serving 50+ Countries Worldwide',
+    description: 'Trusted partner for businesses seeking sustainable packaging solutions',
+    image: 'https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  },
+  {
+    id: 3,
+    title: 'Custom Printing Available',
+    subtitle: 'Your Brand, Our Quality',
+    description: 'Premium custom-printed paper cups to elevate your brand presence',
+    image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  },
+];
+
+const HeroSlider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      titleRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+    )
+    .fromTo(
+      subtitleRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+      '-=0.4'
+    )
+    .fromTo(
+      descriptionRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+      '-=0.3'
+    );
+  }, [currentSlide]);
+
+  return (
+    <div className="relative h-screen w-full overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${slides[currentSlide].image})`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+          </div>
+
+          <div className="relative h-full flex items-center">
+            <div className="container mx-auto px-4 lg:px-8">
+              <div className="max-w-3xl">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: '80px' }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="h-1 bg-gradient-to-r from-green-500 to-emerald-400 mb-6"
+                />
+
+                <h1
+                  ref={titleRef}
+                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight"
+                >
+                  {slides[currentSlide].title}
+                </h1>
+
+                <p
+                  ref={subtitleRef}
+                  className="text-2xl md:text-3xl text-green-400 mb-6 font-semibold"
+                >
+                  {slides[currentSlide].subtitle}
+                </p>
+
+                <p
+                  ref={descriptionRef}
+                  className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed"
+                >
+                  {slides[currentSlide].description}
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="/products"
+                    className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+                  >
+                    View Products
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="/contact"
+                    className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-lg border-2 border-white/30 hover:bg-white/20 transition-all"
+                  >
+                    Get Quote
+                  </motion.a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? 'w-12 bg-green-500'
+                : 'w-2 bg-white/50 hover:bg-white/70'
+            }`}
+          />
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-12 right-8 animate-bounce"
+      >
+        <svg
+          className="w-8 h-8 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </motion.div>
+    </div>
+  );
+};
+
+export default HeroSlider;
