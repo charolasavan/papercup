@@ -28,20 +28,22 @@ const slides = [
   },
 ];
 
-const HeroSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
+const HeroSlider = ({ scrollToNextSection }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);  // State to track the current slide
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const descriptionRef = useRef(null);
 
+  // Automatically switch slides every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(timer);  // Cleanup interval on component unmount
   }, []);
 
+  // GSAP animations for text elements on slide change
   useEffect(() => {
     const tl = gsap.timeline();
 
@@ -50,19 +52,19 @@ const HeroSlider = () => {
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
     )
-    .fromTo(
-      subtitleRef.current,
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
-      '-=0.4'
-    )
-    .fromTo(
-      descriptionRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
-      '-=0.3'
-    );
-  }, [currentSlide]);
+      .fromTo(
+        subtitleRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+        '-=0.4'
+      )
+      .fromTo(
+        descriptionRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+        '-=0.3'
+      );
+  }, [currentSlide]);  // Trigger animation on slide change
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
@@ -87,6 +89,7 @@ const HeroSlider = () => {
           <div className="relative h-full flex items-center">
             <div className="container mx-auto px-4 lg:px-8">
               <div className="max-w-3xl">
+                {/* Animated Line */}
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: '80px' }}
@@ -94,6 +97,7 @@ const HeroSlider = () => {
                   className="h-1 bg-gradient-to-r from-green-500 to-emerald-400 mb-6"
                 />
 
+                {/* Slide Title */}
                 <h1
                   ref={titleRef}
                   className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight"
@@ -101,6 +105,7 @@ const HeroSlider = () => {
                   {slides[currentSlide].title}
                 </h1>
 
+                {/* Slide Subtitle */}
                 <p
                   ref={subtitleRef}
                   className="text-2xl md:text-3xl text-green-400 mb-6 font-semibold"
@@ -108,6 +113,7 @@ const HeroSlider = () => {
                   {slides[currentSlide].subtitle}
                 </p>
 
+                {/* Slide Description */}
                 <p
                   ref={descriptionRef}
                   className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed"
@@ -115,6 +121,7 @@ const HeroSlider = () => {
                   {slides[currentSlide].description}
                 </p>
 
+                {/* Buttons for navigating to products or contact page */}
                 <div className="flex flex-wrap gap-4">
                   <motion.a
                     whileHover={{ scale: 1.05 }}
@@ -139,25 +146,27 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
+      {/* Slide navigation dots */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'w-12 bg-green-500'
-                : 'w-2 bg-white/50 hover:bg-white/70'
-            }`}
+            className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
+              ? 'w-12 bg-green-500'
+              : 'w-2 bg-white/50 hover:bg-white/70'
+              }`}
           />
         ))}
       </div>
 
+      {/* Scroll down icon */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-12 right-8 animate-bounce"
+        onClick={scrollToNextSection}
+        className="absolute bottom-12 right-8 animate-bounce cursor-pointer"
       >
         <svg
           className="w-8 h-8 text-white"

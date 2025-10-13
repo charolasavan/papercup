@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 export default function About() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const titleRef = useRef(null);
 
   useEffect(() => {
     if (titleRef.current) {
@@ -224,24 +224,20 @@ export default function About() {
       <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-500">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[
-              { number: '15+', label: 'Years of Excellence' },
-              { number: '50+', label: 'Countries Worldwide' },
-              { number: '1000+', label: 'Satisfied Clients' },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="text-6xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-xl text-green-100">{stat.label}</div>
-              </motion.div>
-            ))}
+            {[{ number: '15+', label: 'Years of Excellence' }, { number: '50+', label: 'Countries Worldwide' }, { number: '1000+', label: 'Satisfied Clients' }].map(
+              (stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <div className="text-6xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-xl text-green-100">{stat.label}</div>
+                </motion.div>
+              )
+            )}
           </div>
         </div>
       </section>

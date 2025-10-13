@@ -3,8 +3,18 @@
 import { motion } from 'framer-motion';
 import HeroSlider from '@/components/HeroSlider';
 import ProductSlider from '@/components/ProductSlider';
+import { useRef } from 'react';
+import CountUp from '../components/CountUp'
+
 
 export default function Home() {
+
+  const sectionRef = useRef(null);
+
+  const scrollToNextSection = () => {
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const features = [
     {
       icon: (
@@ -51,11 +61,14 @@ export default function Home() {
     { number: '1000+', label: 'Happy Clients' },
   ];
 
+
+
   return (
     <main className="min-h-screen">
-      <HeroSlider />
+      {/* <HeroSlider /> */}
+      <HeroSlider scrollToNextSection={scrollToNextSection} />
 
-      <section className="py-20 bg-white">
+      <section ref={sectionRef} className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +138,16 @@ export default function Home() {
                 className="text-center"
               >
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2">
-                  {stat.number}
+                  {/* {stat.number} */}
+                  <CountUp
+                    from={0}
+                    to={stat.number}
+                    separator=","
+                    direction="up"
+                    duration={0.5}
+                    className="count-up-text"
+                  />
+                  <span>+</span>
                 </div>
                 <div className="text-lg text-green-100">{stat.label}</div>
               </motion.div>
@@ -197,11 +219,11 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
+              transition={{ duration: 0.5 }}
+              className='relative'
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
@@ -212,14 +234,14 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.4 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl"
+                transition={{ duration: 0.3, delay: 0.2 }}
+                className="absolute -bottom-8 -left-4 md:-left-8 bg-white p-4 md:p-6 rounded-xl shadow-xl"
               >
                 <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-green-600 to-emerald-500 rounded-full flex items-center justify-center">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"

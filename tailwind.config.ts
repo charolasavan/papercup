@@ -15,6 +15,24 @@ const config: Config = {
       },
     },
   },
+  container: {
+    // Center the container content on all screen sizes
+    center: true,
+
+    // Optionally set default horizontal padding
+    // padding: '1rem',
+
+    // Breakpoints with custom adjustments
+    screens: {
+      DEFAULT: '375px',  // Mobile
+      sm: '640px',       // Small tablet
+      md: '768px',       // Medium devices (tablets, smaller laptops)
+      lg: '1024px',      // Large screens (laptops, desktops)
+      xl: '1280px',      // Extra-large screens
+      '2xl': '1536px',   // Very large screens (wide monitors)
+    },
+  },
   plugins: [],
 };
+
 export default config;

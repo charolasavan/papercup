@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,14 +30,11 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white shadow-lg py-4'
-          : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-4' : 'bg-transparent py-6'}`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -45,6 +44,7 @@ const Header = () => {
             </motion.div>
           </Link>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link, index) => (
               <motion.div
@@ -55,16 +55,19 @@ const Header = () => {
               >
                 <Link
                   href={link.href}
-                  className={`font-medium transition-colors duration-300 ${
-                    isScrolled
-                      ? 'text-gray-700 hover:text-green-600'
-                      : 'text-white hover:text-green-300'
-                  }`}
+                  className={`${pathname === '/'
+                    ? isScrolled
+                      ? 'text-black hover:text-green-600'
+                      : 'text-white'
+                    : 'text-black hover:text-green-300'} 
+                      font-medium transition-colors duration-300`}
+
                 >
                   {link.label}
                 </Link>
               </motion.div>
             ))}
+            {/* Get Quote Button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -79,26 +82,29 @@ const Header = () => {
             </motion.div>
           </nav>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden flex flex-col space-y-1.5 z-50"
+            // className=" md:hidden flex flex-col space-y-1.5 z-50"
+            className="md:hidden flex flex-col space-y-1.5 z-50 fixed top-4 right-4" 
           >
             <motion.span
               animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-              className={`w-6 h-0.5 ${isScrolled ? 'bg-gray-800' : 'bg-white'} block transition-all`}
+              className={`w-6 h-0.5 ${isScrolled ? 'bg-gray-800' : 'bg-black'} block transition-all`}
             />
             <motion.span
               animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className={`w-6 h-0.5 ${isScrolled ? 'bg-gray-800' : 'bg-white'} block transition-all`}
+              className={`w-6 h-0.5 ${isScrolled ? 'bg-gray-800' : 'bg-black'} block transition-all`}
             />
             <motion.span
               animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-              className={`w-6 h-0.5 ${isScrolled ? 'bg-gray-800' : 'bg-white'} block transition-all`}
+              className={`w-6 h-0.5 ${isScrolled ? 'bg-gray-800' : 'bg-black'} block transition-all`}
             />
           </button>
         </div>
       </div>
 
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -119,12 +125,13 @@ const Header = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-2xl font-semibold text-gray-800 hover:text-green-600 transition-colors"
+                    className="text-2xl font-semibold text-black hover:text-green-600 transition-colors"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
+              {/* Mobile Get Quote Button */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -142,7 +149,7 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </motion.header >
   );
 };
 

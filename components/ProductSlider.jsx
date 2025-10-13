@@ -50,14 +50,14 @@ const products = [
 ];
 
 const ProductSlider = () => {
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
 
     const scrollWidth = slider.scrollWidth;
-    const animationDuration = 30;
+    const animationDuration = 15;
 
     gsap.to(slider, {
       x: -scrollWidth / 2,
@@ -88,15 +88,19 @@ const ProductSlider = () => {
       </div>
 
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+        {/* <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 sm:hidden  md:block" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 sm:hidden  md:block" /> */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 hidden md:block" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 hidden md:block" />
+
+
 
         <div ref={sliderRef} className="flex space-x-8">
           {[...products, ...products].map((product, index) => (
             <motion.div
               key={`${product.id}-${index}`}
               whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 w-80 bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer"
+              className="flex-shrink-0 w-80 sm:w-72 md:w-80 lg:w-96 bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer"
             >
               <div className="relative h-64 overflow-hidden">
                 <img
