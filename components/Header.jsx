@@ -86,7 +86,7 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             // className=" md:hidden flex flex-col space-y-1.5 z-50"
-            className="md:hidden flex flex-col space-y-1.5 z-50 fixed top-4 right-4" 
+            className="md:hidden flex flex-col space-y-1.5 z-50 fixed right-4" 
           >
             <motion.span
               animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
