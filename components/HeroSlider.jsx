@@ -127,7 +127,8 @@ const HeroSlider = ({ scrollToNextSection }) => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href="/products"
-                    className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+                    // className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+                    className="h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center"
                   >
                     View Products
                   </motion.a>
@@ -135,7 +136,8 @@ const HeroSlider = ({ scrollToNextSection }) => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href="/contact"
-                    className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-lg border-2 border-white/30 hover:bg-white/20 transition-all"
+                    // className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-lg border-2 border-white/30 hover:bg-white/20 transition-all"
+                    className="px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-[18px] md:text-lg border-2 border-white/30 hover:bg-white/20 transition-all"
                   >
                     Get Quote
                   </motion.a>

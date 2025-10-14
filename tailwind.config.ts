@@ -16,11 +16,11 @@ const config: Config = {
     },
   },
   container: {
-    // Center the container content on all screen sizes
+    // Center the container content on all screen si  zes
     center: true,
 
     // Optionally set default horizontal padding
-    // padding: '1rem',
+    margin: 'auto',
 
     // Breakpoints with custom adjustments
     screens: {

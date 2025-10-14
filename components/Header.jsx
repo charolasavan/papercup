@@ -5,10 +5,13 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation'
 
+
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname()
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,7 @@ const Header = () => {
     { href: '/products', label: 'Products' },
     { href: '/contact', label: 'Contact' },
   ];
+
 
   return (
     <motion.header
@@ -59,7 +63,7 @@ const Header = () => {
                     ? isScrolled
                       ? 'text-black hover:text-green-600'
                       : 'text-white'
-                    : 'text-black hover:text-green-300'} 
+                    : 'text-black hover:text-green-300'}
                       font-medium transition-colors duration-300`}
 
                 >
@@ -86,7 +90,7 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             // className=" md:hidden flex flex-col space-y-1.5 z-50"
-            className="md:hidden flex flex-col space-y-1.5 z-50 fixed right-4" 
+            className="md:hidden flex flex-col space-y-1.5 z-50 fixed right-4"
           >
             <motion.span
               animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
