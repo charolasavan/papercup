@@ -1,7 +1,8 @@
-'use client'
+'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { Search, Filter } from 'lucide-react';
+import Image from 'next/image'; // Import Image component
 
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -106,7 +107,6 @@ function Products() {
   });
 
   return (
-    // <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
     <main className='min-h-screen pt-24'>
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-500 overflow-hidden">
@@ -134,10 +134,6 @@ function Products() {
               initial={{ width: 0 }}
               animate={{ width: '80px' }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              // whileInView={ {  }}
-              // transition={{ duration: 0.7, delay: 0.3 }}
-
-
               className="w-24 h-1 bg-white mx-auto mb-6" />
             <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
               Premium quality paper cups for every business need
@@ -214,10 +210,12 @@ function Products() {
                   >
                     {/* Product Image */}
                     <div className="relative h-56 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50">
-                      <img
+                      <Image
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        layout="fill" // Make the image fill the parent container
+                        objectFit="cover" // Ensures the image covers the area
+                        className="group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -299,13 +297,8 @@ function Products() {
               </motion.div>
             )}
           </AnimatePresence>
-
-
         </div>
       </section>
-
-      {/* Products Grid */}
-
     </main>
   );
 }

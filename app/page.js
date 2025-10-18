@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import HeroSlider from '@/components/HeroSlider';
 import ProductSlider from '@/components/ProductSlider';
 import { useRef } from 'react';
-import CountUp from '../components/CountUp'
-
+import CountUp from '../components/CountUp';
+import Image from 'next/image'; // Import Image component from next/image
 
 export default function Home() {
 
@@ -60,8 +60,6 @@ export default function Home() {
     { number: '15+', label: 'Years Experience' },
     { number: '1000+', label: 'Happy Clients' },
   ];
-
-
 
   return (
     <main className="min-h-screen">
@@ -185,13 +183,13 @@ export default function Home() {
                 As a premier paper cup manufacturer, we specialize in both import and export services, connecting businesses worldwide with sustainable packaging solutions.
               </p>
               <ul className="space-y-4 mb-8">
-                {[
-                  'International shipping to 50+ countries',
-                  'Customs clearance assistance',
-                  'Flexible order quantities (MOQ available)',
-                  'Competitive pricing for bulk orders',
-                  'Fast turnaround times',
-                  'Complete documentation support',
+                {[ 
+                  'International shipping to 50+ countries', 
+                  'Customs clearance assistance', 
+                  'Flexible order quantities (MOQ available)', 
+                  'Competitive pricing for bulk orders', 
+                  'Fast turnaround times', 
+                  'Complete documentation support' 
                 ].map((item, index) => (
                   <motion.li
                     key={index}
@@ -236,13 +234,14 @@ export default function Home() {
               transition={{ duration: 0.8, ease: [] }}
               className='relative'
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl"
-
-              >
-                <motion.img
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                {/* Replaced img with Image component */}
+                <Image
                   src="https://images.pexels.com/photos/4483942/pexels-photo-4483942.jpeg?auto=compress&cs=tinysrgb&w=1200"
                   alt="Manufacturing facility"
-                  className="w-full h-full object-cover"
+                  layout="responsive"
+                  width={1200}
+                  height={800}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
