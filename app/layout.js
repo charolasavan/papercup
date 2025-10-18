@@ -2,6 +2,9 @@ import './globals.css'; // Global styles
 import { Inter } from 'next/font/google'; // Font import
 import Header from '@/components/Header'; // Header component import
 import Footer from '@/components/Footer'; // Footer component import
+import ScrollWrapper from '../components/ScrollWrapper';
+import WhatsAppChat from '../components/WhatsAppChat'
+
 // Inter font settings
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,9 +32,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+        <main>
+          <ScrollWrapper>
+            <Header />
+            {children}
+            <Footer />
+          </ScrollWrapper>
+
+          <WhatsAppChat />
+        </main>
       </body>
     </html>
   );

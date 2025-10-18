@@ -15,7 +15,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 0);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -34,7 +34,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-4' : 'bg-transparent py-6'}`}
+      className={` ${isScrolled ? 'bg-white shadow-lg fixed' : 'bg-transparent py-6 absolute'} w-full top-0  z-50 transition-all duration-300 py-4`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
@@ -61,17 +61,20 @@ const Header = () => {
                   href={link.href}
                   className={`${pathname === '/'
                     ? isScrolled
-                      ? 'text-black hover:text-green-600'
+                      ? 'text-black'
                       : 'text-white'
-                    : 'text-black hover:text-green-300'}
-                      font-medium transition-colors duration-300`}
+                    : 'text-black '}
+                      font-medium transition-colors duration-300 relative group hover:text-green-300`}
 
                 >
                   {link.label}
+                  <div className={`absolute left-0 -bottom-1 w-full h-0.5 
+                                  ${pathname === '/' || isScrolled && 'bg-green-300'} 
+                                  scale-x-0 group-hover:scale-x-100 transition-transform bg-green-300 `} />
                 </Link>
               </motion.div>
             ))}
-            {/* Get Quote Button */}
+            {/* Get In Touch Button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -81,7 +84,7 @@ const Header = () => {
                 href="/contact"
                 className="px-6 py-2 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
-                Get Quote
+                Get In Touch
               </Link>
             </motion.div>
           </nav>
@@ -90,7 +93,7 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             // className=" md:hidden flex flex-col space-y-1.5 z-50"
-            className="md:hidden flex flex-col space-y-1.5 z-50 fixed right-4"
+            className="md:hidden flex flex-col space-y-1.5 z-50"
           >
             <motion.span
               animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
@@ -135,7 +138,7 @@ const Header = () => {
                   </Link>
                 </motion.div>
               ))}
-              {/* Mobile Get Quote Button */}
+              {/* Mobile Get In Touch Button */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -146,7 +149,7 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full text-lg font-semibold"
                 >
-                  Get Quote
+                  Get In Touch
                 </Link>
               </motion.div>
             </nav>

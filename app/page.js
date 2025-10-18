@@ -80,7 +80,12 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Why Choose EcoCups Global?
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mx-auto mb-6" />
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: '96px' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mx-auto mb-6" />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are a leading manufacturer and exporter of premium paper cups, committed to delivering excellence in quality, sustainability, and service.
             </p>
@@ -170,7 +175,12 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Import & Export Excellence
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mb-6" />
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: '96px' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mb-6" />
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 As a premier paper cup manufacturer, we specialize in both import and export services, connecting businesses worldwide with sustainable packaging solutions.
               </p>
@@ -212,21 +222,24 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/contact"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+                // className="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+                className='inline-block h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all '
               >
                 Request Quote
               </motion.a>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
+              initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, ease: [] }}
               className='relative'
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl"
+
+              >
+                <motion.img
                   src="https://images.pexels.com/photos/4483942/pexels-photo-4483942.jpeg?auto=compress&cs=tinysrgb&w=1200"
                   alt="Manufacturing facility"
                   className="w-full h-full object-cover"
@@ -287,15 +300,15 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/contact"
-                className="px-8 py-4 bg-white text-green-600 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
-              >
+                // className="px-4 py-3 bg-white text-green-600 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+                className='inline-block h-full px-4 py-3 bg-white border-2  text-green-600 rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all'>
                 Contact Us
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/products"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all"
+                className="inline-block h-full px-4 py-3 bg-transparent border-2 border-white  text-white  rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl hover:bg-white/10 transition-all "
               >
                 View Catalog
               </motion.a>

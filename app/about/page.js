@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import CountUp from '@/components/CountUp';
+
 
 export default function About() {
   const titleRef = useRef(null);
@@ -40,6 +42,8 @@ export default function About() {
     },
   ];
 
+  
+
   const timeline = [
     { year: '2008', event: 'Company founded with a vision to revolutionize paper cup manufacturing' },
     { year: '2012', event: 'Expanded operations to international markets, serving 10+ countries' },
@@ -68,7 +72,12 @@ export default function About() {
             <h1 ref={titleRef} className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
               About EcoCups Global
             </h1>
-            <div className="w-24 h-1 bg-white mx-auto mb-6" />
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: '96px' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="w-24 h-1 bg-white mx-auto mb-6" />
             <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
               Leading the future of sustainable packaging with premium paper cup solutions
             </p>
@@ -88,7 +97,12 @@ export default function About() {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Our Story
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mb-6" />
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: '96px' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mb-6" />
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Founded in 2008, EcoCups Global began with a simple mission: to provide businesses worldwide with high-quality, sustainable paper cup solutions. What started as a small manufacturing facility has grown into a global leader in the paper cup industry.
               </p>
@@ -150,7 +164,12 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Core Values
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mx-auto mb-6" />
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: '96px' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mx-auto mb-6" />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The principles that guide everything we do
             </p>
@@ -192,7 +211,12 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Journey
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mx-auto mb-6" />
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: '96px' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mx-auto mb-6" />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Milestones that shaped our success
             </p>
@@ -206,9 +230,10 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative pl-8 pb-12 border-l-4 border-green-500 last:pb-0"
+                className="relative md:pl-8 pb-12 md:border-l-4 md:border-green-500 last:pb-0"
               >
-                <div className="absolute -left-3 top-0 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg" />
+
+                <div className="hidden md:block absolute -left-3 top-0 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg" />
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
                   <div className="text-2xl font-bold text-green-600 mb-2">
                     {item.year}
@@ -233,7 +258,18 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className="text-6xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-6xl font-bold text-white mb-2">
+                    {/* {stat.number} */}
+                    <CountUp
+                      from={0}
+                      to={stat.number}
+                      separator=","
+                      direction="up"
+                      duration={0.2}
+                      className="count-up-text"
+                    />
+                    <span>+</span>
+                  </div>
                   <div className="text-xl text-green-100">{stat.label}</div>
                 </motion.div>
               )
@@ -260,7 +296,8 @@ export default function About() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="/contact"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+              // className="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+              className="inline-block h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl hover:bg-white/10 transition-all "
             >
               Get Started Today
             </motion.a>

@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+
 // import { Draggable } from 'gsap/Draggable';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // gsap.registerPlugin(Draggable);
 
@@ -186,7 +188,12 @@ const ProductSlider = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4">
             Our Premium Products
           </h2>
-          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mx-auto mb-4 md:mb-6" />
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: '96px' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="w-16 md:w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mx-auto mb-4 md:mb-6" />
           <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             High-quality paper cups designed for every need
           </p>
@@ -224,7 +231,7 @@ const ProductSlider = () => {
               key={`${product.id}-${index}`}
               className="flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-96 bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden group transition-transform hover:scale-105 select-none"
             >
-              <div className="relative h-48 md:h-64 overflow-hidden">
+              <div className="relative h-60 md:h-72 overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -252,8 +259,9 @@ const ProductSlider = () => {
       <div className="text-center mt-8 md:mt-12 px-4">
         <a
           href="/products"
-          className="inline-block px-5 md:px-8 py-3 md:py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-base md:text-lg hover:shadow-lg transition-all hover:scale-105"
-          
+          // className="inline-block px-5 md:px-8 py-3 md:py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-base md:text-lg hover:shadow-lg transition-all hover:scale-105"
+          className='inline-block h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all '
+
         >
           View All Products
         </a>
