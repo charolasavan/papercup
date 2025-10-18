@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -94,114 +93,6 @@ function Contact() {
           </motion.div>
         </div>
       </section>
-
-      {/* <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                  Factory Location
-                </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mb-6" />
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Address</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {factoryLocation.address}<br />
-                      {factoryLocation.city}, {factoryLocation.state} {factoryLocation.zipCode}<br />
-                      {factoryLocation.country}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-gray-600">+1 (555) 123-4568</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
-                    <p className="text-gray-600">info@ecocupsglobal.com</p>
-                    <p className="text-gray-600">sales@ecocupsglobal.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl shadow-xl p-8 text-white">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold">Quick WhatsApp Contact</h3>
-                </div>
-                <p className="text-green-50 mb-6 leading-relaxed">
-                  Get instant response on WhatsApp with our complete product and service information.
-                </p>
-                <button
-                  onClick={handleWhatsAppClick}
-                  className="w-auto bg-white text-green-600 font-bold py-4 px-6 rounded-xl hover:bg-green-50 transition-all duration-300 flex items-center space-x-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>Chat with us on WhatsApp</span>
-                </button>
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                  Factory Location Map
-                </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mb-6" />
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="aspect-[4/3] bg-gray-200 relative">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    style={{ border: 0 }}
-                    src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29391.721596987987!2d70.83207042917917!3d22.951508720284174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39598bbc441d6a3f%3A0xd8885524ca7a13ef!2sKerala%20haripar%20morbi!5e0!3m2!1sen!2sin!4v1760778195647!5m2!1sen!2sin`}
-                    allowFullScreen
-                    title="Factory Location"
-                  
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
 
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
