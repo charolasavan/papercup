@@ -4,9 +4,8 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation'
-
-
-
+import Logo from '../public/FortisLogo.svg'
+import Image from 'next/image';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,9 +41,12 @@ const Header = () => {
           <Link href="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent"
             >
-              EcoCups Global
+              <Image
+                src={Logo}
+                alt='Forstic International Logo'
+              />
+
             </motion.div>
           </Link>
 
