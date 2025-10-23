@@ -279,7 +279,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-500">
+      <section className="py-20 bg-gradient-to-br from-  to-emerald-500">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

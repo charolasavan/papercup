@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 // Metadata for the page (this part would typically go in the Head tag, not used in JSX directly)
 export const metadata = {
-  title: 'EcoCups Global - Premium Paper Cup Manufacturer & Exporter',
+  title: 'Fortis International',
   description: 'Leading manufacturer and exporter of premium quality eco-friendly paper cups. Serving businesses worldwide with sustainable packaging solutions.',
   openGraph: {
     title: 'EcoCups Global',
