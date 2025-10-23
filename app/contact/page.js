@@ -23,24 +23,39 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const res = await fetch('/api/send-mail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await res.json();
-    if (data.success) {
-      alert("Email Send Successfully")
-    }
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-    else {
-      alert("Email Send NOt Successfully !!!")
-    }
+    try {
+      const res = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+
   const handleWhatsAppClick = () => {
     const phoneNumber = '+919512121018';
     const message = encodeURIComponent('Hello! I would like to inquire about your eco-friendly products.');
