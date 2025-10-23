@@ -6,7 +6,8 @@ import { MessageCircle, X } from 'lucide-react';
 export default function WhatsAppChat() {
   const [showWhatsApp, setShowWhatsApp] = useState(false);
   const [hovered, setHovered] = useState(false);
-  const number = '7862030297'
+  const number = '+919512121018'
+  // 9512121018
   const message = "Hi! I'm interested in your paper cups"
 
   return (

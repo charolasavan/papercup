@@ -7,10 +7,8 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    company: '',
+    subject: '',
     message: '',
-    productInterest: 'general',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,40 +24,45 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setSubmitStatus('success');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      message: '',
-      productInterest: 'general',
-    });
+      const data = await res.json();
 
-    setTimeout(() => {
-      setSubmitStatus('idle');
-    }, 5000);
+      if (data.success) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+
   const handleWhatsAppClick = () => {
-    const phoneNumber = '7862030297';
+    const phoneNumber = '+919512121018';
     const message = encodeURIComponent('Hello! I would like to inquire about your eco-friendly products.');
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
 
-  const factoryLocation = {
-    address: '123 Industrial Estate, Green Valley',
-    city: 'Manufacturing District',
-    state: 'State',
-    zipCode: '12345',
-    country: 'Country',
-    lat: 40.7484,
-    lng: -73.9857,
-  };
   return (
     <main className="min-h-screen pt-24">
       <section className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-500 overflow-hidden">
@@ -119,7 +122,7 @@ function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800 mb-1">Our Location</h3>
-                      <p className="text-gray-600">103 Kunjal Complex Zadeshwar Road, Bharuch<br />Gujarat, India 392011</p>
+                      <p className="text-gray-600">2<sup>nd</sup> Floor, Super Market 2, Shop 6 - Mahendranagar,  Morbi<br />Gujarat, India 363642</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -130,7 +133,7 @@ function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800 mb-1">Phone Number</h3>
-                      <p className="text-gray-600">+91 94261 12506<br />+91 98250 32506</p>
+                      <p className="text-gray-600">+91 95121 21018</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -142,7 +145,7 @@ function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800 mb-1">Email Address</h3>
-                      <p className="text-gray-600">narmada_agro@yahoo.in<br /></p>
+                      <p className="text-gray-600">fortisinternational4@gmail.com<br /></p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -154,7 +157,7 @@ function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800 mb-1">Business Hours</h3>
-                      <p className="text-gray-600">Monday - Saturday: 9:00 AM - 6:00 PM<br />Sunday: Closed</p>
+                      <p className="text-gray-600">Monday - Saturday: 10:00 AM - 6:00 PM<br />Sunday: Closed</p>
                     </div>
                   </div>
                 </div>
@@ -180,8 +183,8 @@ function Contact() {
             </div>
             <div className="h-full" style={{ opacity: 1, transform: 'none' }}>
               <div className="mb-12" style={{ opacity: 1, transform: 'none' }}>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-2">Find Us</h2>
-                <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">Visit our office to discuss your agricultural needs in person.</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-2">Send Message</h2>
+                <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">Reach out to us directly using the information below.</p>
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: '96px' }}
@@ -189,27 +192,97 @@ function Contact() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="h-1 w-24 bg-green-600 mt-4" />
               </div>
-              <div className="mt-8 h-[500px] rounded-lg overflow-hidden shadow-lg">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29391.721596987987!2d70.83207042917917!3d22.951508720284174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39598bbc441d6a3f%3A0xd8885524ca7a13ef!2sKerala%20haripar%20morbi!5e0!3m2!1sen!2sin!4v1760778195647!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  style={{ border: '0px' }}
-                ></iframe>
+              <div className="mt-8 rounded-lg overflow-hidden ">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none transition-colors"
+                        placeholder="John Doe"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none transition-colors"
+                        placeholder="johndoe@example.com"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Your Subject *
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      required
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none transition-colors"
+                      placeholder="Subject"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Your Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={5}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none transition-colors"
+                      placeholder="Your message here..."
+                    />
+                  </div>
+
+                  <div className="flex justify-center mt-6">
+                    <button
+                      type="submit"
+                      className="px-8 py-3 bg-green-600 text-white font-semibold text-lg rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Submitting...' : 'Send Message'}
+                    </button>
+                  </div>
+
+                  {submitStatus === 'success' && (
+                    <p className="text-center text-green-600 mt-4">Thank you for your message!</p>
+                  )}
+                </form>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
-    </main>
+
+
+
+    </main >
   );
 }
 
 export default Contact;
-
-
-
