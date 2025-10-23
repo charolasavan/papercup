@@ -293,7 +293,7 @@ export default function Home() {
             </h2>
             <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
               Get in touch with us today for competitive pricing and premium quality paper cups
-            </p>
+            </p>  
             <div className="flex flex-wrap justify-center gap-4">
               <motion.a
                 whileHover={{ scale: 1.05 }}
