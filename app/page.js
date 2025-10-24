@@ -66,6 +66,8 @@ export default function Home() {
       {/* <HeroSlider /> */}
       <HeroSlider scrollToNextSection={scrollToNextSection} />
 
+
+
       <section ref={sectionRef} className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -183,13 +185,13 @@ export default function Home() {
                 As a premier paper cup manufacturer, we specialize in both import and export services, connecting businesses worldwide with sustainable packaging solutions.
               </p>
               <ul className="space-y-4 mb-8">
-                {[ 
-                  'International shipping to 50+ countries', 
-                  'Customs clearance assistance', 
-                  'Flexible order quantities (MOQ available)', 
-                  'Competitive pricing for bulk orders', 
-                  'Fast turnaround times', 
-                  'Complete documentation support' 
+                {[
+                  'International shipping to 50+ countries',
+                  'Customs clearance assistance',
+                  'Flexible order quantities (MOQ available)',
+                  'Competitive pricing for bulk orders',
+                  'Fast turnaround times',
+                  'Complete documentation support'
                 ].map((item, index) => (
                   <motion.li
                     key={index}
@@ -279,7 +281,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-  to-emerald-500">
+      <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-500">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -293,7 +295,7 @@ export default function Home() {
             </h2>
             <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
               Get in touch with us today for competitive pricing and premium quality paper cups
-            </p>  
+            </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.a
                 whileHover={{ scale: 1.05 }}
