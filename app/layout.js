@@ -4,6 +4,7 @@ import Header from '@/components/Header'; // Header component import
 import Footer from '@/components/Footer'; // Footer component import
 import ScrollWrapper from '../components/ScrollWrapper';
 import WhatsAppChat from '../components/WhatsAppChat'
+import { Analytics } from "@vercel/analytics/next"
 
 // Inter font settings
 const inter = Inter({ subsets: ['latin'] });
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
 
           <WhatsAppChat />
         </main>
+        <Analytics/>
       </body>
     </html>
   );
