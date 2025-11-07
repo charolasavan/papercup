@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import HeroSlider from '@/components/HeroSlider';
-import ProductSlider from '@/components/ProductSlider';
+import ProductSlider from '../components/ProductSlider'
 import { useRef } from 'react';
 import CountUp from '../components/CountUp';
 import Image from 'next/image'; // Import Image component from next/image
+import HeroSlider from '../components/HeroSlider';
 
 export default function Home() {
 
@@ -241,7 +241,7 @@ export default function Home() {
                 <Image
                   src="https://images.pexels.com/photos/4483942/pexels-photo-4483942.jpeg?auto=compress&cs=tinysrgb&w=1200"
                   alt="Manufacturing facility"
-                  layout="responsive"
+                  // layout="responsive"
                   width={1200}
                   height={800}
                 />

@@ -1,33 +1,68 @@
-import './globals.css'; // Global styles
-import { Inter } from 'next/font/google'; // Font import
-import Header from '@/components/Header'; // Header component import
-import Footer from '@/components/Footer'; // Footer component import
-import ScrollWrapper from '../components/ScrollWrapper';
-import WhatsAppChat from '../components/WhatsAppChat'
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import './globals.css';
+import { Inter } from 'next/font/google';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import WhatsAppChat from '../components/WhatsAppChat';
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-// Inter font settings
+// Inter font
 const inter = Inter({ subsets: ['latin'] });
 
-// Metadata for the page (this part would typically go in the Head tag, not used in JSX directly)
+// ✅ SEO-Optimized Metadata for Fortis International
 export const metadata = {
-  title: 'Fortis International',
-  description: 'Leading manufacturer and exporter of premium quality eco-friendly paper cups. Serving businesses worldwide with sustainable packaging solutions.',
+  title: "Fortis International | Premium Paper Cups Manufacturer & Global Exporter",
+  description:
+    "Fortis International is a leading manufacturer and exporter of eco-friendly paper cups. We deliver premium-quality, sustainable, and customizable paper cup solutions for global businesses.",
+  keywords: [
+    "paper cup manufacturer",
+    "paper cup exporter",
+    "eco-friendly paper cups",
+    "biodegradable paper cups",
+    "custom printed paper cups",
+    "paper cup factory India",
+    "Fortis International",
+    "sustainable packaging solutions"
+  ],
+  metadataBase: new URL("https://www.fortisinternational.com"),
   openGraph: {
-    title: 'EcoCups Global',
-    description: 'Leading manufacturer and exporter of premium eco-friendly paper cups.',
-    url: 'https://www.ecocups-global.com',
+    title: "Fortis International – Eco-Friendly Paper Cups Manufacturer & Exporter",
+    description:
+      "Trusted globally for eco-friendly, premium-quality paper cups with custom printing and sustainable manufacturing solutions.",
+    url: "https://www.fortisinternational.com",
+    siteName: "Fortis International",
+    type: "website",
+    locale: "en_US",
     images: [
-      { url: 'https://www.ecocups-global.com/images/social-image.jpg', width: 1200, height: 630 }
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fortis International – Paper Cups Manufacturer",
+      }
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'EcoCups Global',
-    description: 'Leading manufacturer and exporter of premium eco-friendly paper cups.',
-    image: 'https://www.ecocups-global.com/images/social-image.jpg',
-  }
+    card: "summary_large_image",
+    title: "Fortis International – Sustainable Paper Cups Manufacturer",
+    description:
+      "Exporting premium eco-friendly paper cups worldwide. High-quality custom printing & sustainable production.",
+    images: ["/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.fortisinternational.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      maxSnippet: -1,
+      maxImagePreview: "large",
+      maxVideoPreview: -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -35,16 +70,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <main>
-          <ScrollWrapper>
-            <Header />
-            {children}
-            <Footer />
-          </ScrollWrapper>
+          <Header />
+          
+          {children}
 
+          <Footer />
           <WhatsAppChat />
+
+          <Analytics />
+          <SpeedInsights />
         </main>
-        <Analytics/>
-        <SpeedInsights/>
       </body>
     </html>
   );
