@@ -2,8 +2,6 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://eco-papercup.vercel.app/
 
 # Sitemaps
 Sitemap: https://eco-papercup.vercel.app/sitemap.xml
