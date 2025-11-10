@@ -1,15 +1,14 @@
-import './globals.css';
-import { Inter } from 'next/font/google';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import WhatsAppChat from '../components/WhatsAppChat';
+import "./globals.css";
+import { Inter } from "next/font/google";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import WhatsAppChat from "../components/WhatsAppChat";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-// Inter font
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
-// ✅ SEO-Optimized Metadata for Fortis International
+// ✅ GLOBAL SEO SETTINGS
 export const metadata = {
   title: "Fortis International | Premium Paper Cups Manufacturer & Global Exporter",
   description:
@@ -22,14 +21,14 @@ export const metadata = {
     "custom printed paper cups",
     "paper cup factory India",
     "Fortis International",
-    "sustainable packaging solutions"
+    "sustainable packaging solutions",
   ],
-  metadataBase: new URL("https://www.fortisinternational.com"),
+  metadataBase: new URL("https://eco-papercup.vercel.app"),
   openGraph: {
     title: "Fortis International – Eco-Friendly Paper Cups Manufacturer & Exporter",
     description:
       "Trusted globally for eco-friendly, premium-quality paper cups with custom printing and sustainable manufacturing solutions.",
-    url: "https://www.fortisinternational.com",
+    url: "https://eco-papercup.vercel.app",
     siteName: "Fortis International",
     type: "website",
     locale: "en_US",
@@ -39,7 +38,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Fortis International – Paper Cups Manufacturer",
-      }
+      },
     ],
   },
   twitter: {
@@ -50,7 +49,7 @@ export const metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://www.fortisinternational.com",
+    canonical: "https://eco-papercup.vercel.app",
   },
   robots: {
     index: true,
@@ -65,21 +64,93 @@ export const metadata = {
   },
 };
 
+// ✅ SCHEMA (JSON-LD) WITH BUSINESS DETAILS
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://eco-papercup.vercel.app/#organization",
+      "name": "Fortis International",
+      "url": "https://eco-papercup.vercel.app",
+      "logo": "https://eco-papercup.vercel.app/logo.png",
+      "sameAs": [],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91 95121 21018",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["en"],
+        },
+      ],
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://eco-papercup.vercel.app/#website",
+      "url": "https://eco-papercup.vercel.app",
+      "name": "Fortis International",
+      "publisher": { "@id": "https://eco-papercup.vercel.app/#organization" },
+    },
+
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://eco-papercup.vercel.app/#localbusiness",
+      "name": "Fortis International",
+      "image": "https://eco-papercup.vercel.app/og-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2nd Floor, Super Market 2, Shop 6, Mahendranagar",
+        "addressLocality": "Morbi",
+        "addressRegion": "Gujarat",
+        "postalCode": "363642",
+        "addressCountry": "IN",
+      },
+      "telephone": "+91 95121 21018",
+      "email": "mailto:fortisinternational4@gmail.com",
+      "url": "https://eco-papercup.vercel.app",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+          "opens": "10:00",
+          "closes": "18:00",
+        },
+      ],
+    },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* ✅ Inject Schema Markup */}
+        <meta name="google-site-verification" content="Wyy88U-bGUIhTdMHsnnGP_QZDIrPapeh0lKmi1JDHOI" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </head>
+
       <body className={inter.className}>
-        <main>
-          <Header />
-          
-          {children}
+        <Header />
 
-          <Footer />
-          <WhatsAppChat />
+        <main>{children}</main>
 
-          <Analytics />
-          <SpeedInsights />
-        </main>
+        <Footer />
+        <WhatsAppChat />
+
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
