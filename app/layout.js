@@ -1,3 +1,5 @@
+// app/layout.js
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "../components/Header";
@@ -24,6 +26,12 @@ export const metadata = {
     "sustainable packaging solutions",
   ],
   metadataBase: new URL("https://eco-papercup.vercel.app"),
+
+  // ✅ Google verification (alternate method — your method also works)
+  verification: {
+    google: "Wyy88U-bGUIhTdMHsnnGP_QZDIrPapeh0lKmi1JDHOI",
+  },
+
   openGraph: {
     title: "Fortis International – Eco-Friendly Paper Cups Manufacturer & Exporter",
     description:
@@ -41,6 +49,7 @@ export const metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Fortis International – Sustainable Paper Cups Manufacturer",
@@ -48,9 +57,13 @@ export const metadata = {
       "Exporting premium eco-friendly paper cups worldwide. High-quality custom printing & sustainable production.",
     images: ["/og-image.jpg"],
   },
+
+  // ✅ Canonical URL
   alternates: {
     canonical: "https://eco-papercup.vercel.app",
   },
+
+  // ✅ Robots.txt equivalent
   robots: {
     index: true,
     follow: true,
@@ -64,24 +77,24 @@ export const metadata = {
   },
 };
 
-// ✅ SCHEMA (JSON-LD) WITH BUSINESS DETAILS
+// ✅ SCHEMA (JSON-LD)
 const schemaData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": "https://eco-papercup.vercel.app/#organization",
-      "name": "Fortis International",
-      "url": "https://eco-papercup.vercel.app",
-      "logo": "https://eco-papercup.vercel.app/logo.png",
-      "sameAs": [],
-      "contactPoint": [
+      name: "Fortis International",
+      url: "https://eco-papercup.vercel.app",
+      logo: "https://eco-papercup.vercel.app/logo.png",
+      sameAs: [],
+      contactPoint: [
         {
           "@type": "ContactPoint",
-          "telephone": "+91 95121 21018",
-          "contactType": "customer service",
-          "areaServed": "IN",
-          "availableLanguage": ["en"],
+          telephone: "+91 95121 21018",
+          contactType: "customer service",
+          areaServed: "IN",
+          availableLanguage: ["en"],
         },
       ],
     },
@@ -89,31 +102,31 @@ const schemaData = {
     {
       "@type": "WebSite",
       "@id": "https://eco-papercup.vercel.app/#website",
-      "url": "https://eco-papercup.vercel.app",
-      "name": "Fortis International",
-      "publisher": { "@id": "https://eco-papercup.vercel.app/#organization" },
+      url: "https://eco-papercup.vercel.app",
+      name: "Fortis International",
+      publisher: { "@id": "https://eco-papercup.vercel.app/#organization" },
     },
 
     {
       "@type": "LocalBusiness",
       "@id": "https://eco-papercup.vercel.app/#localbusiness",
-      "name": "Fortis International",
-      "image": "https://eco-papercup.vercel.app/og-image.jpg",
-      "address": {
+      name: "Fortis International",
+      image: "https://eco-papercup.vercel.app/og-image.jpg",
+      address: {
         "@type": "PostalAddress",
-        "streetAddress": "2nd Floor, Super Market 2, Shop 6, Mahendranagar",
-        "addressLocality": "Morbi",
-        "addressRegion": "Gujarat",
-        "postalCode": "363642",
-        "addressCountry": "IN",
+        streetAddress: "2nd Floor, Super Market 2, Shop 6, Mahendranagar",
+        addressLocality: "Morbi",
+        addressRegion: "Gujarat",
+        postalCode: "363642",
+        addressCountry: "IN",
       },
-      "telephone": "+91 95121 21018",
-      "email": "mailto:fortisinternational4@gmail.com",
-      "url": "https://eco-papercup.vercel.app",
-      "openingHoursSpecification": [
+      telephone: "+91 95121 21018",
+      email: "mailto:fortisinternational4@gmail.com",
+      url: "https://eco-papercup.vercel.app",
+      openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
+          dayOfWeek: [
             "Monday",
             "Tuesday",
             "Wednesday",
@@ -121,8 +134,8 @@ const schemaData = {
             "Friday",
             "Saturday",
           ],
-          "opens": "10:00",
-          "closes": "18:00",
+          opens: "10:00",
+          closes: "18:00",
         },
       ],
     },
@@ -133,8 +146,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* ✅ Inject Schema Markup */}
-        <meta name="google-site-verification" content="Wyy88U-bGUIhTdMHsnnGP_QZDIrPapeh0lKmi1JDHOI" />
+        {/* ✅ Directly inject JSON-LD Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
