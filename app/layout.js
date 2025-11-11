@@ -1,5 +1,3 @@
-// app/layout.js
-
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "../components/Header";
@@ -10,32 +8,26 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// ✅ GLOBAL SEO
+// ✅ GLOBAL SEO SETTINGS
 export const metadata = {
   title: "Fortis International | Premium Paper Cups Manufacturer & Global Exporter",
   description:
-    "Fortis International is a trusted global manufacturer and exporter of premium quality, eco-friendly, and customizable paper cups. We provide sustainable paper cup solutions for businesses worldwide.",
+    "Fortis International is a leading manufacturer and exporter of eco-friendly paper cups. We deliver premium-quality, sustainable, and customizable paper cup solutions for global businesses.",
   keywords: [
-    "paper cup manufacturer India",
+    "paper cup manufacturer",
     "paper cup exporter",
-    "biodegradable paper cups",
     "eco-friendly paper cups",
+    "biodegradable paper cups",
     "custom printed paper cups",
-    "paper cup factory Gujarat",
-    "sustainable packaging",
+    "paper cup factory India",
     "Fortis International",
+    "sustainable packaging solutions",
   ],
-
   metadataBase: new URL("https://eco-papercup.vercel.app"),
-
-  verification: {
-    google: "Wyy88U-bGUIhTdMHsnnGP_QZDIrPapeh0lKmi1JDHOI",
-  },
-
   openGraph: {
-    title: "Fortis International – Premium Eco-Friendly Paper Cups Manufacturer",
+    title: "Fortis International – Eco-Friendly Paper Cups Manufacturer & Exporter",
     description:
-      "High-quality eco-friendly paper cups with custom printing. Trusted global exporter delivering sustainable, durable, food-safe packaging solutions.",
+      "Trusted globally for eco-friendly, premium-quality paper cups with custom printing and sustainable manufacturing solutions.",
     url: "https://eco-papercup.vercel.app",
     siteName: "Fortis International",
     type: "website",
@@ -45,23 +37,20 @@ export const metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fortis International Paper Cup Manufacturing",
+        alt: "Fortis International – Paper Cups Manufacturer",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Fortis International – Paper Cup Manufacturer & Global Exporter",
+    title: "Fortis International – Sustainable Paper Cups Manufacturer",
     description:
-      "Leading manufacturer and exporter of premium-quality eco-friendly paper cups with custom branding solutions.",
+      "Exporting premium eco-friendly paper cups worldwide. High-quality custom printing & sustainable production.",
     images: ["/og-image.jpg"],
   },
-
   alternates: {
     canonical: "https://eco-papercup.vercel.app",
   },
-
   robots: {
     index: true,
     follow: true,
@@ -75,26 +64,24 @@ export const metadata = {
   },
 };
 
-// ✅ IMPROVED SCHEMA.JSON-LD
+// ✅ SCHEMA (JSON-LD) WITH BUSINESS DETAILS
 const schemaData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": "https://eco-papercup.vercel.app/#organization",
-      name: "Fortis International",
-      url: "https://eco-papercup.vercel.app",
-      logo: "https://eco-papercup.vercel.app/logo.png",
-      description:
-        "Fortis International is a global manufacturer and exporter of premium-quality eco-friendly paper cups.",
-      sameAs: [],
-      contactPoint: [
+      "name": "Fortis International",
+      "url": "https://eco-papercup.vercel.app",
+      "logo": "https://eco-papercup.vercel.app/logo.png",
+      "sameAs": [],
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          telephone: "+91 95121 21018",
-          contactType: "customer support",
-          availableLanguage: ["en"],
-          areaServed: "IN",
+          "telephone": "+91 95121 21018",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["en"],
         },
       ],
     },
@@ -102,31 +89,31 @@ const schemaData = {
     {
       "@type": "WebSite",
       "@id": "https://eco-papercup.vercel.app/#website",
-      url: "https://eco-papercup.vercel.app",
-      name: "Fortis International",
-      publisher: { "@id": "https://eco-papercup.vercel.app/#organization" },
+      "url": "https://eco-papercup.vercel.app",
+      "name": "Fortis International",
+      "publisher": { "@id": "https://eco-papercup.vercel.app/#organization" },
     },
 
     {
       "@type": "LocalBusiness",
       "@id": "https://eco-papercup.vercel.app/#localbusiness",
-      name: "Fortis International",
-      image: "https://eco-papercup.vercel.app/og-image.jpg",
-      url: "https://eco-papercup.vercel.app",
-      telephone: "+91 95121 21018",
-      email: "mailto:fortisinternational4@gmail.com",
-      address: {
+      "name": "Fortis International",
+      "image": "https://eco-papercup.vercel.app/og-image.jpg",
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: "2nd Floor, Super Market 2, Shop 6, Mahendranagar",
-        addressLocality: "Morbi",
-        addressRegion: "Gujarat",
-        postalCode: "363642",
-        addressCountry: "IN",
+        "streetAddress": "2nd Floor, Super Market 2, Shop 6, Mahendranagar",
+        "addressLocality": "Morbi",
+        "addressRegion": "Gujarat",
+        "postalCode": "363642",
+        "addressCountry": "IN",
       },
-      openingHoursSpecification: [
+      "telephone": "+91 95121 21018",
+      "email": "mailto:fortisinternational4@gmail.com",
+      "url": "https://eco-papercup.vercel.app",
+      "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
+          "dayOfWeek": [
             "Monday",
             "Tuesday",
             "Wednesday",
@@ -134,12 +121,10 @@ const schemaData = {
             "Friday",
             "Saturday",
           ],
-          opens: "10:00",
-          closes: "18:00",
+          "opens": "10:00",
+          "closes": "18:00",
         },
       ],
-      description:
-        "Manufacturer and global exporter of eco-friendly, biodegradable, and customizable premium paper cups.",
     },
   ],
 };
@@ -148,6 +133,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* ✅ Inject Schema Markup */}
+        {/* <meta name="google-site-verification" content="Wyy88U-bGUIhTdMHsnnGP_QZDIrPapeh0lKmi1JDHOI" /> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
