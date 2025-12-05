@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-
+import Image from 'next/image';
 // import { Draggable } from 'gsap/Draggable';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -14,6 +14,7 @@ const products = [
     description: 'Perfect for hot and cold beverages',
     sizes: '4oz - 12oz',
     image: "/images/productImages/singleWall/4oz/cup_1.png",
+    // image: "cup_1.png"
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const products = [
     description: 'Extra insulation for hot drinks',
     sizes: '7oz - 12oz',
     image: "/images/productImages/doubleWall/8oz/cup_3.jpg",
+    // image: "cup_3.jpg",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const products = [
     description: 'Premium textured grip design',
     sizes: '4oz - 12oz',
     image: "/images/productImages/rippleWall/12oz/cup_11.jpg",
+    // image: "cup_11.jpg",
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ const products = [
     description: 'Your brand, our quality',
     sizes: 'All sizes available',
     image: "/images/productImages/rippleWall/8oz/cup_8.jpg",
+    // image: "cup_8.jpg",
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const products = [
     description: 'Biodegradable and compostable',
     sizes: '4oz - 16oz',
     image: "/images/productImages/rippleWall/6oz/cup_3.jpg",
+    // image: "cup_3.jpg",
   },
   {
     id: 6,
@@ -49,6 +54,7 @@ const products = [
     description: 'Compatible with all cup sizes',
     sizes: 'Universal fit',
     image: "/images/productImages/singleWall/7oz/cup_8.png",
+    // image: "cup_8.png",
   },
 ];
 
@@ -232,9 +238,10 @@ const ProductSlider = () => {
               className="flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-96 bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden group transition-transform hover:scale-105 select-none"
             >
               <div className="relative h-60 md:h-72 overflow-hidden">
-                <img
-                  src={product.image}
+                <Image
+                  src={product.image.src ? product.image.src : product.image}
                   alt={product.name}
+                  fill={true}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   draggable="false"
                 />
