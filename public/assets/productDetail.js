@@ -137,7 +137,7 @@ const products = [
         category: 'ripple',
         description: 'Textured 4oz cup providing excellent grip and insulation for hot beverages.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/4oz/cup_1.jpg",
+        image: "/images/productImages/rippleWall/4oz/cup_1.JPG",
     },
     {
         id: 16,
@@ -146,7 +146,7 @@ const products = [
         category: 'ripple',
         description: 'Stylish and practical, perfect for cafes looking for premium presentation.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/4oz/cup_2.jpg",
+        image: "/images/productImages/rippleWall/4oz/cup_2.JPG",
     },
     {
         id: 17,
@@ -155,7 +155,7 @@ const products = [
         category: 'ripple',
         description: 'Textured 6oz cup ensuring maximum comfort while keeping beverages warm.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/6oz/cup_3.jpg",
+        image: "/images/productImages/rippleWall/6oz/cup_3.JPG",
     },
     {
         id: 18,
@@ -164,7 +164,7 @@ const products = [
         category: 'ripple',
         description: 'Elegant ripple design offering a sophisticated look and practical insulation.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/6oz/cup_4.jpg",
+        image: "/images/productImages/rippleWall/6oz/cup_4.JPG",
     },
     {
         id: 19,
@@ -173,7 +173,7 @@ const products = [
         category: 'ripple',
         description: '7oz ripple cup providing excellent grip and comfort for your hot drinks.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/7oz/cup_5.jpg",
+        image: "/images/productImages/rippleWall/7oz/cup_5.JPG",
     },
     {
         id: 20,
@@ -182,7 +182,7 @@ const products = [
         category: 'ripple',
         description: 'Stylish ripple wall cup that combines grip, comfort, and premium look.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/7oz/cup_6.jpg",
+        image: "/images/productImages/rippleWall/7oz/cup_6.JPG",
     },
     {
         id: 21,
@@ -191,7 +191,7 @@ const products = [
         category: 'ripple',
         description: '8oz cup with ripple design, keeping your beverage warm and hands safe.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/8oz/cup_7.jpg",
+        image: "/images/productImages/rippleWall/8oz/cup_7.JPG",
     },
     {
         id: 22,
@@ -200,7 +200,7 @@ const products = [
         category: 'ripple',
         description: 'Premium ripple cup ideal for cafes and professional presentations.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/8oz/cup_8.jpg",
+        image: "/images/productImages/rippleWall/8oz/cup_8.JPG",
     },
     {
         id: 23,
@@ -209,7 +209,7 @@ const products = [
         category: 'ripple',
         description: 'Textured 8oz cup combining style, insulation, and grip for hot drinks.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/8oz/cup_9.jpg",
+        image: "/images/productImages/rippleWall/8oz/cup_9.JPG",
     },
     {
         id: 24,
@@ -218,7 +218,7 @@ const products = [
         category: 'ripple',
         description: 'Elegant 8oz cup designed for premium beverage service with safety and comfort.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/8oz/cup_10.jpg",
+        image: "/images/productImages/rippleWall/8oz/cup_10.JPG",
     },
     {
         id: 25,
@@ -227,7 +227,7 @@ const products = [
         category: 'ripple',
         description: 'Large 12oz ripple cup combining modern design, insulation, and grip for hot drinks.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/12oz/cup_11.jpg",
+        image: "/images/productImages/rippleWall/12oz/cup_11.JPG",
     },
     {
         id: 26,
@@ -236,7 +236,7 @@ const products = [
         category: 'ripple',
         description: 'Premium 12oz cup ideal for hot beverages with a stylish ripple design.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/12oz/cup_12.jpg",
+        image: "/images/productImages/rippleWall/12oz/cup_12.JPG",
     },
     {
         id: 27,
@@ -245,7 +245,7 @@ const products = [
         category: 'ripple',
         description: 'Durable and textured 12oz cup providing safety, insulation, and style.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/rippleWall/12oz/cup_13.jpg",
+        image: "/images/productImages/rippleWall/12oz/cup_13.JPG",
     },
 
     // ---- Double Wall Cups ----
@@ -256,7 +256,7 @@ const products = [
         category: 'double',
         description: '7oz double wall cup with superior insulation to keep drinks hot longer.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/7oz/cup_1.jpg",
+        image: "/images/productImages/doubleWall/7oz/cup_1.JPG",
     },
     {
         id: 29,
@@ -265,7 +265,7 @@ const products = [
         category: 'double',
         description: 'Comfortable grip with enhanced heat protection for busy cafes or offices.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/7oz/cup_2.jpg",
+        image: "/images/productImages/doubleWall/7oz/cup_2.JPG",
     },
     {
         id: 30,
@@ -274,7 +274,7 @@ const products = [
         category: 'double',
         description: '8oz premium cup ideal for hot beverages with superior insulation.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/8oz/cup_3.jpg",
+        image: "/images/productImages/doubleWall/8oz/cup_3.JPG",
     },
     {
         id: 31,
@@ -283,7 +283,7 @@ const products = [
         category: 'double',
         description: 'Stylish double wall cup combining comfort, insulation, and professional appearance.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/8oz/cup_4.jpg",
+        image: "/images/productImages/doubleWall/8oz/cup_4.JPG",
     },
     {
         id: 32,
@@ -292,7 +292,7 @@ const products = [
         category: 'double',
         description: 'Premium double wall cup designed for hot beverages with excellent heat protection.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/8oz/cup_5.jpg",
+        image: "/images/productImages/doubleWall/8oz/cup_5.JPG",
     },
     {
         id: 33,
@@ -301,7 +301,7 @@ const products = [
         category: 'double',
         description: '12oz double wall cup providing maximum insulation and premium feel.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/12oz/cup_6.jpg",
+        image: "/images/productImages/doubleWall/12oz/cup_6.JPG",
     },
     {
         id: 34,
@@ -310,7 +310,7 @@ const products = [
         category: 'double',
         description: 'Stylish 12oz cup perfect for professional beverage service.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/12oz/cup_7.jpg",
+        image: "/images/productImages/doubleWall/12oz/cup_7.JPG",
     },
     {
         id: 35,
@@ -319,7 +319,7 @@ const products = [
         category: 'double',
         description: 'Premium double wall cup combining modern design, grip, and superior insulation.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/12oz/cup_8.jpg",
+        image: "/images/productImages/doubleWall/12oz/cup_8.JPG",
     },
     {
         id: 36,
@@ -328,7 +328,7 @@ const products = [
         category: 'double',
         description: 'Durable 12oz cup designed for hot drinks, ensuring comfort, safety, and style.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/doubleWall/12oz/cup_9.jpg",
+        image: "/images/productImages/doubleWall/12oz/cup_9.JPG",
     },
 ];
 
