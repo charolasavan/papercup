@@ -37,7 +37,7 @@ const products = [
     name: 'Custom Printed Cups',
     description: 'Your brand, our quality',
     sizes: 'All sizes available',
-    image: "/images/productImages/singleWall/12oz/cup_12.jpg",
+    image: "/images/productImages/singleWall/12oz/cup_12.JPG",
     // image: "cup_8.jpg",
   },
   {
@@ -45,7 +45,7 @@ const products = [
     name: 'Eco-Friendly Cups',
     description: 'Biodegradable and compostable',
     sizes: '4oz - 16oz',
-    image: "/images/productImages/singleWall/12oz/cup_14.jpg",
+    image: "/images/productImages/singleWall/12oz/cup_14.JPG",
     // image: "cup_3.jpg",
   },
   {
@@ -53,7 +53,7 @@ const products = [
     name: 'Plane Cups',
     description: 'Compatible with all cup sizes',
     sizes: 'Universal fit',
-    image: "/images/productImages/rippleWall/7oz/cup_5.jpg",
+    image: "/images/productImages/rippleWall/7oz/cup_5.JPG",
     // image: "cup_8.png",
   },
 ];
@@ -134,57 +134,7 @@ const ProductSlider = () => {
       const containerWidth = container.offsetWidth;
       return -(sliderWidth / 2 - containerWidth);
     };
-
-    // const draggable = Draggable.create(slider, {
-    //   type: 'x',
-    //   bounds: {
-    //     minX: calculateBounds(),
-    //     maxX: 0,
-    //   },
-    //   inertia: true,
-    //   snap: {
-    //     x: (endValue) => {
-    //       return Math.round(endValue / 20) * 20;
-    //     },
-    //   },
-    //   onDragStart: () => {
-    //     setIsDragging(true);
-    //     stopAutoScroll();
-    //   },
-    //   onDragEnd: () => {
-    //     setIsDragging(false);
-
-    //     const currentX = gsap.getProperty(slider, 'x');
-    //     const sliderWidth = slider.scrollWidth / 3;
-
-    //     if (currentX < -sliderWidth * 2 + 100) {
-    //       gsap.set(slider, { x: currentX + sliderWidth });
-    //     } else if (currentX > -100) {
-    //       gsap.set(slider, { x: currentX - sliderWidth });
-    //     }
-
-    //     setTimeout(() => startAutoScroll(scrollSpeed), 500);
-    //   },
-    // });
-
-    // const handleResize = () => {
-    //   draggable[0].applyBounds({
-    //     minX: calculateBounds(),
-    //     maxX: 0,
-    //   });
-    // };
-
-    // window.addEventListener('resize', handleResize);
-
     startAutoScroll(scrollSpeed);
-
-    // return () => {
-    //   draggable[0].kill();
-    //   if (autoScrollRef.current) {
-    //     autoScrollRef.current.kill();
-    //   }
-    //   // window.removeEventListener('resize', handleResize);
-    // };
   }, []);
 
   return (

@@ -8,7 +8,8 @@ const products = [
         category: 'single',
         description: 'Ideal for espresso shots and small beverages, lightweight yet durable for everyday use.',
         features: ['Food grade paper', 'Leak-proof', 'Microwave safe'],
-        image: "/images/productImages/singleWall/4oz/cup_1.JPG",
+        image: "/images/productImages/singleWall/4oz/cup_1.jpg",
+
     },
     {
         id: 2,
@@ -17,7 +18,7 @@ const products = [
         category: 'single',
         description: 'Standard 4oz cup perfect for coffee, tea, or small servings. Eco-friendly and cost-effective.',
         features: ['Eco-friendly', 'Biodegradable', 'Cost-effective'],
-        image: "/images/productImages/singleWall/4oz/cup_2.JPG",
+        image: "/images/productImages/singleWall/4oz/cup_2.jpg",
     },
     {
         id: 3,
@@ -26,7 +27,7 @@ const products = [
         category: 'single',
         description: 'Extra insulation keeps your hot drinks warm without the need for a sleeve.',
         features: ['Heat resistant', 'No sleeve needed', 'Premium quality'],
-        image: "/images/productImages/singleWall/4oz/cup_3.JPG",
+        image: "/images/productImages/singleWall/4oz/cup_3.jpg",
     },
     {
         id: 4,
@@ -35,7 +36,7 @@ const products = [
         category: 'single',
         description: '6oz cup offering larger capacity, perfect for coffee, tea, or small beverages with superior insulation.',
         features: ['Double layer protection', 'Comfortable grip', 'Professional look'],
-        image: "/images/productImages/singleWall/6oz/cup_4.JPG",
+        image: "/images/productImages/singleWall/6oz/cup_4.jpg",
     },
     {
         id: 5,
@@ -44,7 +45,7 @@ const products = [
         category: 'single',
         description: 'Textured design for a secure grip, combining functionality and style.',
         features: ['Ergonomic design', 'Heat protection', 'Stylish appearance'],
-        image: "/images/productImages/singleWall/6oz/cup_5.JPG",
+        image: "/images/productImages/singleWall/6oz/cup_5.jpg",
     },
     {
         id: 6,
@@ -53,7 +54,7 @@ const products = [
         category: 'single',
         description: 'Premium ripple design ensures comfort and insulation for your beverages.',
         features: ['Triple layer', 'Enhanced insulation', 'Modern design'],
-        image: "/images/productImages/singleWall/6oz/cup_6.jpg",
+        image: "/images/productImages/singleWall/6oz/cup_6.JPG",
     },
     {
         id: 7,
@@ -62,7 +63,7 @@ const products = [
         category: 'single',
         description: 'Customizable cup perfect for branding with full-color printing options.',
         features: ['Full color printing', 'Logo placement', 'Brand customization'],
-        image: "/images/productImages/singleWall/7oz/cup_7.JPG",
+        image: "/images/productImages/singleWall/7oz/cup_7.jpg",
     },
     {
         id: 8,
@@ -71,7 +72,7 @@ const products = [
         category: 'single',
         description: 'Unique design options tailored to your brand or personal style.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/singleWall/7oz/cup_8.JPG",
+        image: "/images/productImages/singleWall/7oz/cup_8.jpg",
     },
     {
         id: 9,
@@ -80,7 +81,7 @@ const products = [
         category: 'single',
         description: 'Spacious 8oz cup for your favorite coffee or tea, with reliable single wall insulation.',
         features: ['Comfortable grip', 'Microwave safe', 'Eco-friendly'],
-        image: "/images/productImages/singleWall/8oz/cup_9.JPG",
+        image: "/images/productImages/singleWall/8oz/cup_9.jpg",
     },
     {
         id: 10,
@@ -89,7 +90,7 @@ const products = [
         category: 'single',
         description: 'Elegant 8oz cup designed for everyday use, combining functionality with style.',
         features: ['Leak-proof', 'Heat resistant', 'Premium quality'],
-        image: "/images/productImages/singleWall/8oz/cup_10.jpg",
+        image: "/images/productImages/singleWall/8oz/cup_10.JPG",
     },
     {
         id: 11,
@@ -107,7 +108,7 @@ const products = [
         category: 'single',
         description: 'Large 12oz cup suitable for hot drinks, keeping your beverage warm and secure.',
         features: ['Heat resistant', 'Premium design', 'Eco-friendly'],
-        image: "/images/productImages/singleWall/12oz/cup_12.jpg",
+        image: "/images/productImages/singleWall/12oz/cup_12.JPG",
     },
     {
         id: 13,
@@ -116,7 +117,7 @@ const products = [
         category: 'single',
         description: '12oz cup combining modern style and practicality, ideal for cafes and offices.',
         features: ['Leak-proof', 'Comfortable grip', 'Microwave safe'],
-        image: "/images/productImages/singleWall/12oz/cup_13.jpg",
+        image: "/images/productImages/singleWall/12oz/cup_13.JPG",
     },
     {
         id: 14,
@@ -125,7 +126,7 @@ const products = [
         category: 'single',
         description: 'Premium 12oz cup offering durability and design for a professional beverage experience.',
         features: ['Triple layer', 'Stylish design', 'Heat protection'],
-        image: "/images/productImages/singleWall/12oz/cup_14.jpg",
+        image: "/images/productImages/singleWall/12oz/cup_14.JPG",
     },
 
     // ---- Ripple Wall Cups ----
