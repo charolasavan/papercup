@@ -9,7 +9,6 @@ import products from '../../public/assets/productDetail';
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  console.log(products)
   const categories = [
     { id: 'all', name: 'All' },
     { id: 'single', name: 'Single Wall' },
