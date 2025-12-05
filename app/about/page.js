@@ -48,7 +48,7 @@ export default function About() {
     { year: '2012', event: 'Expanded operations to international markets, serving 10+ countries' },
     { year: '2016', event: 'Achieved ISO certification and doubled production capacity' },
     { year: '2020', event: 'Launched eco-friendly biodegradable cup line' },
-    { year: '2024', event: 'Serving 50+ countries with 500M+ cups produced annually' },
+    { year: '2024', event: 'Serving 5+ countries with 500M+ cups produced annually' },
   ];
 
   return (
@@ -56,7 +56,7 @@ export default function About() {
       <section className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-500 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/6347720/pexels-photo-6347720.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+            backgroundImage: 'url(/images/About/BannerImg.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }} />
@@ -106,7 +106,7 @@ export default function About() {
                 Founded in 2008, EcoCups Global began with a simple mission: to provide businesses worldwide with high-quality, sustainable paper cup solutions. What started as a small manufacturing facility has grown into a global leader in the paper cup industry.
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Today, we operate state-of-the-art facilities equipped with advanced machinery and employ cutting-edge manufacturing processes. Our commitment to quality, innovation, and sustainability has earned us the trust of over 1,000 businesses across 50+ countries.
+                Today, we operate state-of-the-art facilities equipped with advanced machinery and employ cutting-edge manufacturing processes. Our commitment to quality, innovation, and sustainability has earned us the trust of over 1,000 businesses across 5+ countries.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 We specialize in both import and export services, offering flexible solutions for businesses of all sizes. From small cafes to large multinational corporations, we deliver excellence in every cup.
@@ -122,51 +122,51 @@ export default function About() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="rounded-2xl shadow-lg w-full h-64 object-cover"
+                  // whileHover={{ scale: 1.05 }}
+                  className="rounded-2xl shadow-lg w-full h-64 object-cover overflow-hidden"
                 >
                   <Image
-                    src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/images/About/image1.png"
                     alt="Paper cups"
                     width={800}
                     height={512}
-                    className="rounded-2xl shadow-lg w-full h-64 object-cover"
+                    className="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8"
+                  // whileHover={{ scale: 1.05 }}
+                  className="rounded-2xl shadow-lg w-full h-64 object-cover overflow-hidden mt-8"
                 >
                   <Image
-                    src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/images/About/image2.png"
                     alt="Coffee cup"
                     width={800}
                     height={512}
-                    className="rounded-2xl shadow-lg w-full h-64 object-cover"
+                    className="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="rounded-2xl shadow-lg w-full h-64 object-cover -mt-8"
+                  // whileHover={{ scale: 1.05 }}
+                  className="rounded-2xl shadow-lg w-full h-64 object-cover overflow-hidden "
                 >
                   <Image
-                    src="https://images.pexels.com/photos/6348128/pexels-photo-6348128.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/images/About/image3.png"
                     alt="Manufacturing"
                     width={800}
                     height={512}
-                    className="rounded-2xl shadow-lg w-full h-64 object-cover"
+                    className="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="rounded-2xl shadow-lg w-full h-64 object-cover"
+                  // whileHover={{ scale: 1.05 }}
+                  className="rounded-2xl shadow-lg w-full h-64 object-cover overflow-hidden"
                 >
                   <Image
-                    src="https://images.pexels.com/photos/7262942/pexels-photo-7262942.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/images/About/image4.png"
                     alt="Eco-friendly"
                     width={800}
                     height={512}
-                    className="rounded-2xl shadow-lg w-full h-64 object-cover"
+                    className="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>
               </div>
@@ -202,12 +202,29 @@ export default function About() {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all"
+                // initial={{ opacity: 0, y: 30 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // viewport={{ once: true }}
+                // transition={{ duration: 0.6, delay: index * 0.1 }}
+                // whileHover={{ y: -10 }}
+                initial={{ x: 0, opacity: 0, y: 60, scale: 0.96 }}
+                whileInView={{ x: 0, opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.18,
+                  ease: [0.16, 1, 0.3, 1], // Apple-style smooth curve
+                }}
+                whileHover={{
+                  y: -12,
+                  scale: 1.03,
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+                  transition: {
+                    duration: 0.35,
+                    ease: "easeOut",
+                  },
+                }}
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl"
               >
                 <div className="text-5xl mb-4">{value.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
@@ -271,7 +288,7 @@ export default function About() {
       <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-500">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[{ number: '15+', label: 'Years of Excellence' }, { number: '50+', label: 'Countries Worldwide' }, { number: '1000+', label: 'Satisfied Clients' }].map(
+            {[{ number: '1+', label: 'Years of Excellence' }, { number: '5+', label: 'Countries Worldwide' }, { number: '1000+', label: 'Satisfied Clients' }].map(
               (stat, index) => (
                 <motion.div
                   key={index}

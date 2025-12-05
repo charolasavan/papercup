@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation'
 import Logo from '../public/FortisLogo.svg'
+// import Logo from '../public/images/Banner_1.png'
 import Image from 'next/image';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);

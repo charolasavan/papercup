@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Banner_1 from '../public/images/BannerSliderImages/Banner_1.png';
+import Banner_2 from '../public/images/BannerSliderImages/Banner_2.png';
+import Banner_3 from '../public/images/BannerSliderImages/Banner_3.png';
 import gsap from 'gsap';
 
 const slides = [
@@ -10,21 +13,21 @@ const slides = [
     title: 'Premium Paper Cups',
     subtitle: 'Eco-Friendly Solutions for Your Business',
     description: 'Leading manufacturer and exporter of high-quality paper cups worldwide',
-    image: 'https://images.pexels.com/photos/6347720/pexels-photo-6347720.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    image: Banner_3.src
   },
   {
     id: 2,
     title: 'Global Export Excellence',
-    subtitle: 'Serving 50+ Countries Worldwide',
+    subtitle: 'Serving 5+ Countries Worldwide',
     description: 'Trusted partner for businesses seeking sustainable packaging solutions',
-    image: 'https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    image: Banner_2.src
   },
   {
     id: 3,
     title: 'Custom Printing Available',
     subtitle: 'Your Brand, Our Quality',
     description: 'Premium custom-printed paper cups to elevate your brand presence',
-    image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    image: Banner_1.src
   },
 ];
 
@@ -83,6 +86,7 @@ const HeroSlider = ({ scrollToNextSection }) => {
               backgroundImage: `url(${slides[currentSlide].image})`,
             }}
           >
+
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
           </div>
 
@@ -98,12 +102,15 @@ const HeroSlider = ({ scrollToNextSection }) => {
                 />
 
                 {/* Slide Title */}
-                <h1
+                <motion.h1
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
                   ref={titleRef}
                   className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight"
                 >
                   {slides[currentSlide].title}
-                </h1>
+                </motion.h1>
 
                 {/* Slide Subtitle */}
                 <p
@@ -149,7 +156,7 @@ const HeroSlider = ({ scrollToNextSection }) => {
       </AnimatePresence>
 
       {/* Slide navigation dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -160,30 +167,35 @@ const HeroSlider = ({ scrollToNextSection }) => {
               }`}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Scroll down icon */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        onClick={scrollToNextSection}
-        className="absolute bottom-12 right-8 animate-bounce cursor-pointer"
-      >
-        <svg
-          className="w-8 h-8 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          onClick={scrollToNextSection}
+          className="bg-green-600 p-2 rounded-full cursor-pointer animate-bounce"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
-      </motion.div>
+          <svg
+            className="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </motion.div>
+      </div>
+
+
+
     </div>
   );
 };

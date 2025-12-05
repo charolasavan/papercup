@@ -23,7 +23,7 @@ export default function Home() {
         </svg>
       ),
       title: 'Global Export',
-      description: 'Serving 50+ countries worldwide with timely delivery and premium quality products.',
+      description: 'Serving 5+ countries worldwide with timely delivery and premium quality products.',
     },
     {
       icon: (
@@ -55,9 +55,9 @@ export default function Home() {
   ];
 
   const stats = [
-    { number: '50+', label: 'Countries Served' },
+    { number: '5+', label: 'Countries Served' },
     { number: '500M+', label: 'Cups Produced Annually' },
-    { number: '15+', label: 'Years Experience' },
+    { number: '1+', label: 'Years Experience' },
     { number: '1000+', label: 'Happy Clients' },
   ];
 
@@ -94,13 +94,25 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all"
+                key={`${index}-${feature.id}`}
+                initial={{ x: 0, opacity: 0, y: 60, scale: 0.96 }}
+                whileInView={{ x: 0, opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.18,
+                  ease: [0.16, 1, 0.3, 1], // Apple-style smooth curve
+                }}
+                whileHover={{
+                  y: -12,
+                  scale: 1.03,
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+                  transition: {
+                    duration: 0.35,
+                    ease: "easeOut",
+                  },
+                }}
+                className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl shadow-lg hover:shadow-xl"
               >
                 <div className="text-green-600 mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -186,7 +198,7 @@ export default function Home() {
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  'International shipping to 50+ countries',
+                  'International shipping to 5+ countries',
                   'Customs clearance assistance',
                   'Flexible order quantities (MOQ available)',
                   'Competitive pricing for bulk orders',
@@ -238,8 +250,9 @@ export default function Home() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 {/* Replaced img with Image component */}
+
                 <Image
-                  src="https://images.pexels.com/photos/4483942/pexels-photo-4483942.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src="/images/BestQuality/BestQuality.png"
                   alt="Manufacturing facility"
                   // layout="responsive"
                   width={1200}
@@ -271,7 +284,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">ISO Certified</div>
+                    <div className="text-2xl font-bold text-gray-900">Best Quality</div>
                     <div className="text-gray-600">Quality Assured</div>
                   </div>
                 </div>
