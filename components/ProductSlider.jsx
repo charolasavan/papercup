@@ -13,7 +13,7 @@ const products = [
     name: 'Single Wall Paper Cups',
     description: 'Perfect for hot and cold beverages',
     sizes: '4oz - 12oz',
-    image: "/images/productImages/singleWall/4oz/cup_1.jpg",
+    image: "/images/productImages/singleWall/8oz/cup_11.jpg",
     // image: "cup_1.png"
   },
   {
@@ -21,7 +21,7 @@ const products = [
     name: 'Double Wall Paper Cups',
     description: 'Extra insulation for hot drinks',
     sizes: '7oz - 12oz',
-    image: "/images/productImages/singleWall/8oz/cup_9.jpg",
+    image: "/images/productImages/doubleWall/8oz/cup_3.jpg",
     // image: "cup_3.jpg",
   },
   {
@@ -29,7 +29,7 @@ const products = [
     name: 'Ripple Wall Paper Cups',
     description: 'Premium textured grip design',
     sizes: '4oz - 12oz',
-    image: "/images/productImages/singleWall/8oz/cup_11.jpg",
+    image: "/images/productImages/rippleWall/4oz/cup_2.jpg",
     // image: "cup_11.jpg",
   },
   {
@@ -37,7 +37,7 @@ const products = [
     name: 'Custom Printed Cups',
     description: 'Your brand, our quality',
     sizes: 'All sizes available',
-    image: "/images/productImages/singleWall/12oz/cup_12.JPG",
+    image: "/images/productImages/rippleWall/8oz/cup_7.jpg",
     // image: "cup_8.jpg",
   },
   {
@@ -53,8 +53,7 @@ const products = [
     name: 'Plane Cups',
     description: 'Compatible with all cup sizes',
     sizes: 'Universal fit',
-    image: "/images/productImages/rippleWall/7oz/cup_5.JPG",
-    // image: "cup_8.png",
+    image: "/images/productImages/singleWall/12oz/cup_13.JPG",
   },
 ];
 

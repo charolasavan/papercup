@@ -121,27 +121,11 @@ function Products() {
                 {filteredProducts.map((product, index) => (
                   <motion.div
                     key={`${selectedCategory}-${product.id}`}
-                    // initial={{ x: 0, opacity: 0, y: 100 }}
+                    initial={{ x: 0, opacity: 0, y: 100 }}
+                    whileInView={{ x: 0, y: 0, opacity: 1, }}
+                    viewport={{ once: true }}
                     // animate={{ x: 0, opacity: 1, y: 0 }}
-                    // whileInView={{ x: 0, opacity: 1, }}
-                    // transition={{ duration: 0.3, delay: index * 0.1, }}
-                    // key={product.id + index}
-                    initial={{ x: 0, opacity: 0, y: 60, scale: 0.96 }}
-                    whileInView={{ x: 0, opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true, }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.12,
-                      ease: [0.16, 1, 0.3, 1], // Apple-style smooth curve
-                    }}
-                    whileHover={{
-                      scale: 1.03,
-                      boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-                      transition: {
-                        duration: 0.35,
-                        ease: "easeOut",
-                      },
-                    }}
+                    transition={{ duration: 0.3, delay: index * 0.1, }}
                     className="bg-white rounded-2xl shadow-lg hover:shadow-2xl  overflow-hidden group"
                   >
                     {/* Product Image */}
@@ -150,6 +134,7 @@ function Products() {
                         src={product.image}
                         alt={product.name}
                         fill={true}
+                        loading="lazy"
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
 

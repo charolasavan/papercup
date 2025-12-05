@@ -216,14 +216,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <ScrollWrapper>
+        {/* <ScrollWrapper> */}
 
 
           <Header />
           <main>{children}</main>
           <Footer />
           <WhatsAppChat />
-        </ScrollWrapper>
+        {/* </ScrollWrapper> */}
         {/* Optional: Enable when needed */}
         {/* <Analytics /> */}
         {/* <SpeedInsights /> */}
