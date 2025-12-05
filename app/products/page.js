@@ -150,7 +150,7 @@ function Products() {
                       <Image
                         src={product.image}
                         alt={product.name}
-                        fill
+                        fill={true}
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
 
