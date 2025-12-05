@@ -1,378 +1,3 @@
-// const products = [
-//     // ---- single wall ---
-//     {
-//         id: 1,
-//         name: 'Single Wall Paper Cup ',
-//         size: "4oz",
-//         category: 'single',
-//         description: 'Perfect for espresso and small beverages',
-//         features: ['Food grade paper', 'Leak-proof', 'Microwave safe'],
-//         image: "/images/productImages/singleWall/4oz/cup_1.png",
-//         // sizes: ['4oz', '6oz', '8oz'],
-//     },
-//     {
-//         id: 2,
-//         name: 'Single Wall Paper Cup',
-//         size: "4oz",
-//         category: 'single',
-//         description: 'Standard size for coffee and tea',
-//         features: ['Eco-friendly', 'Biodegradable', 'Cost-effective'],
-//         image: "/images/productImages/singleWall/4oz/cup_2-removebg-preview.png",
-//         // sizes: ['10oz', '12oz', '16oz'],
-//     },
-//     {
-//         id: 3,
-//         name: 'Single Wall Paper Cup ',
-//         size: '4oz',
-//         category: 'single',
-//         description: 'Extra insulation for hot beverages',
-//         features: ['Heat resistant', 'No sleeve needed', 'Premium quality'],
-//         image: "/images/productImages/singleWall/4oz/cup_3.png",
-//         // sizes: ['8oz', '12oz', '16oz', '20oz'],
-//     },
-//     {
-//         id: 4,
-//         name: 'Single Wall Paper Cup ',
-//         size: "6oz",
-//         category: 'single',
-//         description: 'Large capacity with superior insulation',
-//         features: ['Double layer protection', 'Comfortable grip', 'Professional look'],
-//         image: "/images/productImages/singleWall/6oz/cup_4.png",
-//         // sizes: ['12oz', '16oz', '20oz'],
-//         // price: '$49.99'
-//     },
-//     {
-//         id: 5,
-//         name: 'Single Wall Paper Cup ',
-//         size: "6oz",
-//         category: 'single',
-//         description: 'Textured design for better grip',
-//         features: ['Ergonomic design', 'Heat protection', 'Stylish appearance'],
-//         image: "/images/productImages/singleWall/6oz/cup_5.png",
-//         // sizes: ['8oz', '12oz', '16oz'],
-//         // price: '$39.99'
-//     },
-//     {
-//         id: 6,
-//         name: 'Single Wall Paper Cup ',
-//         size: "6oz",
-//         category: 'single',
-//         description: 'Premium ripple design for comfort',
-//         features: ['Triple layer', 'Enhanced insulation', 'Modern design'],
-//         image: "/images/productImages/singleWall/6oz/cup_6.jpg",
-//     },
-//     {
-//         id: 7,
-//         name: 'Single Wall Paper Cup ',
-//         size: "7oz",
-//         category: 'single',
-//         description: 'Your brand on premium quality cups',
-//         features: ['Full color printing', 'Logo placement', 'Brand customization'],
-//         image: "/images/productImages/singleWall/7oz/cup_7.png",
-
-//     },
-//     {
-//         id: 8,
-//         name: 'Single Wall Paper Cup ',
-//         size: "7oz",
-//         category: 'single',
-//         description: 'Unique designs tailored to your needs',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/singleWall/7oz/cup_8.png",
-
-
-//     },
-//     {
-//         id: 9,
-//         name: 'Single Wall Paper Cup ',
-//         size: "8oz",
-//         category: 'single',
-//         description: 'Unique designs tailored to your needs',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/singleWall/8oz/cup_9.png",
-
-//     },
-//     {
-//         id: 10,
-//         name: 'Single Wall Paper Cup ',
-//         size: "8oz",
-//         category: 'single',
-//         description: 'Unique designs tailored to your needs',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/singleWall/8oz/cup_10.jpg",
-
-//     },
-//     {
-//         id: 11,
-//         name: 'Single Wall Paper Cup ',
-//         size: "8oz",
-//         category: 'single',
-//         description: 'Unique designs tailored to your needs',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/singleWall/8oz/cup_11.jpg",
-//     },
-//     {
-//         id: 12,
-//         name: 'Single Wall Paper Cup ',
-//         size: "12oz",
-//         category: 'single',
-//         description: 'Unique designs tailored to your needs',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/singleWall/12oz/cup_12.jpg",
-//     },
-//     {
-//         id: 13,
-//         name: 'Single Wall Paper Cup ',
-//         size: "12oz",
-//         category: 'single',
-//         description: 'Unique designs tailored to your needs',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/singleWall/12oz/cup_13.jpg",
-//     },
-//     {
-//         id: 14,
-//         name: 'Single Wall Paper Cup ',
-//         size: "12oz",
-//         category: 'single',
-//         description: 'Unique designs tailored to your needs',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/singleWall/12oz/cup_14.jpg",
-//     },
-//     // ---- ripple wall ---
-//     {
-//         id: 14,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "4oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/4oz/cup_1.jpg",
-//     },
-//     {
-//         id: 15,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "4oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/4oz/cup_2.jpg",
-//     },
-//     {
-//         id: 16,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "6oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/6oz/cup_3.jpg",
-//     },
-//     {
-//         id: 17,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "6oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/6oz/cup_4.jpg",
-//     },
-//     {
-//         id: 18,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "7oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/7oz/cup_5.jpg",
-//     },
-//     {
-//         id: 19,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "7oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/7oz/cup_6.jpg",
-//     },
-//     {
-//         id: 20,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "8oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/8oz/cup_7.jpg",
-//     },
-//     {
-//         id: 21,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "8oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/8oz/cup_8.jpg",
-//     },
-//     {
-//         id: 22,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "8oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/8oz/cup_9.jpg",
-//     },
-//     {
-//         id: 23,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "8oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/8oz/cup_10.jpg",
-//     },
-//     {
-//         id: 24,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "12oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/12oz/cup_11.jpg",
-//     },
-//     {
-//         id: 25,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "12oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/12oz/cup_12.jpg",
-//     },
-//     {
-//         id: 26,
-//         name: 'Ripple Wall Paper Cup',
-//         size: "12oz",
-//         category: 'ripple',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/rippleWall/12oz/cup_13.jpg",
-//     },
-
-//     // ----- double Wall ----
-
-
-//     {
-//         id: 27,
-//         name: 'Double Wall Paper Cup',
-//         size: "7oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/7oz/cup_1.jpg",
-//     },
-//     {
-//         id: 28,
-//         name: 'Double Wall Paper Cup',
-//         size: "7oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/7oz/cup_2.jpg",
-//     },
-//     {
-//         id: 29,
-//         name: 'Double Wall Paper Cup',
-//         size: "8oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/8oz/cup_3.jpg",
-//     },
-//     {
-//         id: 30,
-//         name: 'Double Wall Paper Cup',
-//         size: "8oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/8oz/cup_4.jpg",
-//     },
-//     {
-//         id: 31,
-//         name: 'Double Wall Paper Cup',
-//         size: "8oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/8oz/cup_5.jpg",
-//     },
-//     {
-//         id: 32,
-//         name: 'Double Wall Paper Cup',
-//         size: "12oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/12oz/cup_6.jpg",
-//     },
-
-//     {
-//         id: 33,
-//         name: 'Double Wall Paper Cup',
-//         size: "12oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/12oz/cup_7.jpg",
-//     },
-
-//     {
-//         id: 34,
-//         name: 'Double Wall Paper Cup',
-//         size: "12oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/12oz/cup_8.jpg",
-//     },
-//     {
-//         id: 35,
-//         name: 'Double Wall Paper Cup',
-//         size: "12oz",
-//         category: 'double',
-//         description: 'Textured design for better grip',
-//         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-//         image: "/images/productImages/doubleWall/12oz/cup_9.jpg",
-//     },
-
-
-
-// ];
-
-
-
-
-// export default products;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const products = [
     // ---- Single Wall Cups ----
@@ -383,7 +8,7 @@ const products = [
         category: 'single',
         description: 'Ideal for espresso shots and small beverages, lightweight yet durable for everyday use.',
         features: ['Food grade paper', 'Leak-proof', 'Microwave safe'],
-        image: "/images/productImages/singleWall/4oz/cup_1.png",
+        image: "/images/productImages/singleWall/4oz/cup_1.JPG",
     },
     {
         id: 2,
@@ -392,7 +17,7 @@ const products = [
         category: 'single',
         description: 'Standard 4oz cup perfect for coffee, tea, or small servings. Eco-friendly and cost-effective.',
         features: ['Eco-friendly', 'Biodegradable', 'Cost-effective'],
-        image: "/images/productImages/singleWall/4oz/cup_2-removebg-preview.png",
+        image: "/images/productImages/singleWall/4oz/cup_2.JPG",
     },
     {
         id: 3,
@@ -401,7 +26,7 @@ const products = [
         category: 'single',
         description: 'Extra insulation keeps your hot drinks warm without the need for a sleeve.',
         features: ['Heat resistant', 'No sleeve needed', 'Premium quality'],
-        image: "/images/productImages/singleWall/4oz/cup_3.png",
+        image: "/images/productImages/singleWall/4oz/cup_3.JPG",
     },
     {
         id: 4,
@@ -410,7 +35,7 @@ const products = [
         category: 'single',
         description: '6oz cup offering larger capacity, perfect for coffee, tea, or small beverages with superior insulation.',
         features: ['Double layer protection', 'Comfortable grip', 'Professional look'],
-        image: "/images/productImages/singleWall/6oz/cup_4.png",
+        image: "/images/productImages/singleWall/6oz/cup_4.JPG",
     },
     {
         id: 5,
@@ -419,7 +44,7 @@ const products = [
         category: 'single',
         description: 'Textured design for a secure grip, combining functionality and style.',
         features: ['Ergonomic design', 'Heat protection', 'Stylish appearance'],
-        image: "/images/productImages/singleWall/6oz/cup_5.png",
+        image: "/images/productImages/singleWall/6oz/cup_5.JPG",
     },
     {
         id: 6,
@@ -437,7 +62,7 @@ const products = [
         category: 'single',
         description: 'Customizable cup perfect for branding with full-color printing options.',
         features: ['Full color printing', 'Logo placement', 'Brand customization'],
-        image: "/images/productImages/singleWall/7oz/cup_7.png",
+        image: "/images/productImages/singleWall/7oz/cup_7.JPG",
     },
     {
         id: 8,
@@ -446,7 +71,7 @@ const products = [
         category: 'single',
         description: 'Unique design options tailored to your brand or personal style.',
         features: ['Design consultation', 'Mock-ups provided', 'Fast turnaround'],
-        image: "/images/productImages/singleWall/7oz/cup_8.png",
+        image: "/images/productImages/singleWall/7oz/cup_8.JPG",
     },
     {
         id: 9,
@@ -455,7 +80,7 @@ const products = [
         category: 'single',
         description: 'Spacious 8oz cup for your favorite coffee or tea, with reliable single wall insulation.',
         features: ['Comfortable grip', 'Microwave safe', 'Eco-friendly'],
-        image: "/images/productImages/singleWall/8oz/cup_9.png",
+        image: "/images/productImages/singleWall/8oz/cup_9.JPG",
     },
     {
         id: 10,
