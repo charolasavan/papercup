@@ -239,7 +239,8 @@ const ProductSlider = () => {
             >
               <div className="relative h-60 md:h-72 overflow-hidden">
                 <Image
-                  src={product.image.src ? product.image.src : product.image}
+                  // src={product.image.src ? product.image.src : product.image}
+                  src={'/images/productImages/singleWall/4oz/cup_2.jpg'}
                   alt={product.name}
                   fill={true}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
