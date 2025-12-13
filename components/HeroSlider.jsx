@@ -2,9 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Banner_1 from '../public/images/BannerSliderImages/Banner_1.png';
-import Banner_2 from '../public/images/BannerSliderImages/Banner_2.png';
-import Banner_3 from '../public/images/BannerSliderImages/Banner_3.png';
+import Image from 'next/image';
+import Banner_1 from '../public/images/BannerSliderImages/Banner_1.webp';
+import Banner_2 from '../public/images/BannerSliderImages/Banner_2.webp';
+import Banner_3 from '../public/images/BannerSliderImages/Banner_3.webp';
 import gsap from 'gsap';
 
 const slides = [
@@ -13,21 +14,21 @@ const slides = [
     title: 'Premium Paper Cups',
     subtitle: 'Eco-Friendly Solutions for Your Business',
     description: 'Leading manufacturer and exporter of high-quality paper cups worldwide',
-    image: Banner_3.src
+    image: Banner_3
   },
   {
     id: 2,
     title: 'Global Export Excellence',
     subtitle: 'Serving 5+ Countries Worldwide',
     description: 'Trusted partner for businesses seeking sustainable packaging solutions',
-    image: Banner_2.src
+    image: Banner_2
   },
   {
     id: 3,
     title: 'Custom Printing Available',
     subtitle: 'Your Brand, Our Quality',
     description: 'Premium custom-printed paper cups to elevate your brand presence',
-    image: Banner_1.src
+    image: Banner_1
   },
 ];
 
@@ -80,13 +81,17 @@ const HeroSlider = ({ scrollToNextSection }) => {
           transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${slides[currentSlide].image})`,
-            }}
-          >
+          <div className="absolute inset-0">
+            <Image
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].title}
+              fill={true}
+              decoding='async'
+              loading='lazy'
+              className="object-cover object-center"
+            />
 
+            {/* Dark Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
           </div>
 

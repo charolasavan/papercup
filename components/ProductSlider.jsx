@@ -191,6 +191,7 @@ const ProductSlider = () => {
                   src={product.image}
                   alt={product.name}
                   fill={true}
+                  loading='lazy'
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   draggable="false"
                 />

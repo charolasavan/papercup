@@ -103,10 +103,10 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-500 mb-6" />
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Founded in 2008, EcoCups Global began with a simple mission: to provide businesses worldwide with high-quality, sustainable paper cup solutions. What started as a small manufacturing facility has grown into a global leader in the paper cup industry.
+                Founded in 2024, EcoCups Global began with a simple mission: to provide businesses worldwide with high-quality, sustainable paper cup solutions. What started as a small manufacturing facility has grown into a global leader in the paper cup industry.
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Today, we operate state-of-the-art facilities equipped with advanced machinery and employ cutting-edge manufacturing processes. Our commitment to quality, innovation, and sustainability has earned us the trust of over 1,000 businesses across 5+ countries.
+                Today, we operate state-of-the-art facilities equipped with advanced machinery and employ cutting-edge manufacturing processes. Our commitment to quality, innovation, and sustainability has earned us the trust of over 1,000 businesses across 3+ countries.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 We specialize in both import and export services, offering flexible solutions for businesses of all sizes. From small cafes to large multinational corporations, we deliver excellence in every cup.
@@ -126,10 +126,11 @@ export default function About() {
                   className="rounded-2xl shadow-lg w-full h-64 object-cover overflow-hidden"
                 >
                   <Image
-                    src="/images/About/image1.png"
+                    src="/images/About/image1.webp"
                     alt="Paper cups"
                     width={800}
                     height={512}
+                    loading='lazy'
                     className="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>
@@ -138,10 +139,11 @@ export default function About() {
                   className="rounded-2xl shadow-lg w-full h-64 object-cover overflow-hidden mt-8"
                 >
                   <Image
-                    src="/images/About/image2.png"
+                    src="/images/About/image2.webp"
                     alt="Coffee cup"
                     width={800}
                     height={512}
+                    loading='lazy'
                     className="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>
@@ -150,10 +152,11 @@ export default function About() {
                   className="rounded-2xl shadow-lg w-full h-64 object-cover overflow-hidden "
                 >
                   <Image
-                    src="/images/About/image3.png"
+                    src="/images/About/image3.webp"
                     alt="Manufacturing"
                     width={800}
                     height={512}
+                    loading='lazy'
                     className="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>
@@ -162,10 +165,11 @@ export default function About() {
                   className="rounded-2xl shadow-lg w-full h-64 object-cover overflow-hidden"
                 >
                   <Image
-                    src="/images/About/image4.png"
+                    src="/images/About/image4.webp"
                     alt="Eco-friendly"
                     width={800}
                     height={512}
+                    loading='lazy'
                     className="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>

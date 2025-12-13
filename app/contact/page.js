@@ -65,7 +65,7 @@ function Contact() {
 
   return (
     <main className="min-h-screen pt-24">
-      <section className="relative py-20  bg-gradient-to-br from-green-600 to-emerald-500 overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-500 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: 'url(/images/About/image3.png)',

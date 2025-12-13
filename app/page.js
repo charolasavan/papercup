@@ -252,9 +252,10 @@ export default function Home() {
                 {/* Replaced img with Image component */}
 
                 <Image
-                  src="/images/BestQuality/BestQuality.png"
+                  src="/images/BestQuality/StandardQuality.webp"
                   alt="Manufacturing facility"
                   // layout="responsive"
+                  // loading='lazy'
                   width={1200}
                   height={800}
                 />
@@ -284,7 +285,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">Best Quality</div>
+                    <div className="text-2xl font-bold text-gray-900">ISO Certified</div>
                     <div className="text-gray-600">Quality Assured</div>
                   </div>
                 </div>
