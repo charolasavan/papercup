@@ -21,7 +21,7 @@ const products = [
     name: 'Double Wall Paper Cups',
     description: 'Extra insulation for hot drinks',
     sizes: '7oz - 12oz',
-    image: "/images/productImages/doubleWall/8oz/cup_3.jpg",
+    image: "/images/productImages/doubleWall/8oz/cup_3.JPG",
     // image: "cup_3.jpg",
   },
   {
@@ -29,7 +29,7 @@ const products = [
     name: 'Ripple Wall Paper Cups',
     description: 'Premium textured grip design',
     sizes: '4oz - 12oz',
-    image: "/images/productImages/rippleWall/4oz/cup_2.jpg",
+    image: "/images/productImages/rippleWall/4oz/cup_2.JPG",
     // image: "cup_11.jpg",
   },
   {
@@ -37,7 +37,7 @@ const products = [
     name: 'Custom Printed Cups',
     description: 'Your brand, our quality',
     sizes: 'All sizes available',
-    image: "/images/productImages/rippleWall/8oz/cup_7.jpg",
+    image: "/images/productImages/rippleWall/8oz/cup_7.JPG",
     // image: "cup_8.jpg",
   },
   {
