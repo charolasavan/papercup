@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -12,7 +14,15 @@ function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('idle');
+  const [submitStatus, setSubmitStatus] = useState('idle'); // idle | success | error
+
+  // Load reCAPTCHA v3 script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -23,21 +33,40 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.message.length > 1000) {
+      setSubmitStatus('error');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
+      if (!window.grecaptcha) {
+        throw new Error('reCAPTCHA not loaded');
+      }
+
+      // ✅ Generate token using SITE KEY
+      const captchaToken = await window.grecaptcha.execute(SITE_KEY, {
+        action: 'contact',
+      });
+
+      // ✅ Send to backend
       const res = await fetch('/api/send-mail', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          captchaToken,
+        }),
       });
 
       const data = await res.json();
 
-      if (data.success) {
+      if (res.ok && data.success) {
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -49,16 +78,18 @@ function Contact() {
         setSubmitStatus('error');
       }
     } catch (error) {
+      console.error(error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-
   const handleWhatsAppClick = () => {
     const phoneNumber = '+919512121018';
-    const message = encodeURIComponent('Hello! I would like to inquire about your eco-friendly products.');
+    const message = encodeURIComponent(
+      'Hello! I would like to inquire about your eco-friendly products.'
+    );
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
@@ -269,7 +300,15 @@ function Contact() {
                   </div>
 
                   {submitStatus === 'success' && (
-                    <p className="text-center text-green-600 mt-4">Thank you for your message!</p>
+                    <p className="text-green-600 text-center">
+                      ✅ Message sent successfully!
+                    </p>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <p className="text-red-600 text-center">
+                      ❌ Failed to send message. Try again later.
+                    </p>
                   )}
                 </form>
               </div>

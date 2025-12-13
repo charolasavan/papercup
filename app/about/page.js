@@ -44,11 +44,11 @@ export default function About() {
   ];
 
   const timeline = [
-    { year: '2008', event: 'Company founded with a vision to revolutionize paper cup manufacturing' },
-    { year: '2012', event: 'Expanded operations to international markets, serving 10+ countries' },
-    { year: '2016', event: 'Achieved ISO certification and doubled production capacity' },
-    { year: '2020', event: 'Launched eco-friendly biodegradable cup line' },
-    { year: '2024', event: 'Serving 5+ countries with 500M+ cups produced annually' },
+    { event: 'Company founded with a vision to revolutionize paper cup manufacturing' },
+    { event: 'Expanded operations to international markets, serving 10+ countries' },
+    { event: 'Achieved ISO certification and doubled production capacity' },
+    { event: 'Launched eco-friendly biodegradable cup line' },
+    { event: 'Serving 5+ countries with 500M+ cups produced annually' },
   ];
 
   return (
@@ -271,11 +271,8 @@ export default function About() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative md:pl-8 pb-12 md:border-l-4 md:border-green-500 last:pb-0"
               >
-                <div className="hidden md:block absolute -left-3 top-0 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg" />
+                <div className="hidden md:block absolute -left-3 top-1/4 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg" />
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
-                  <div className="text-2xl font-bold text-green-600 mb-2">
-                    {item.year}
-                  </div>
                   <p className="text-lg text-gray-700">{item.event}</p>
                 </div>
               </motion.div>
