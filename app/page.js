@@ -6,6 +6,8 @@ import { useRef } from 'react';
 import CountUp from '../components/CountUp';
 import Image from 'next/image'; // Import Image component from next/image
 import HeroSlider from '../components/HeroSlider';
+import Link from 'next/link';
+
 
 export default function Home() {
 
@@ -230,15 +232,12 @@ export default function Home() {
                   </motion.li>
                 ))}
               </ul>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <Link
                 href="/contact"
-                // className="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
                 className='inline-block h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all '
               >
                 Request Quote
-              </motion.a>
+              </Link>
             </motion.div>
 
             <motion.div
@@ -311,22 +310,27 @@ export default function Home() {
               Get in touch with us today for competitive pricing and premium quality paper cups
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="/contact"
-                // className="px-4 py-3 bg-white text-green-600 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
-                className='inline-block h-full px-4 py-3 bg-white border-2  text-green-600 rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all'>
-                Contact Us
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="/products"
-                className="inline-block h-full px-4 py-3 bg-transparent border-2 border-white  text-white  rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl hover:bg-white/10 transition-all "
-              >
-                View Catalog
-              </motion.a>
+              <Link href="/contact">
+                <motion.p
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+
+                  // className="px-4 py-3 bg-white text-green-600 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+                  className='inline-block h-full px-4 py-3 bg-white border-2  text-green-600 rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all'>
+                  Contact Us
+                </motion.p>
+              </Link>
+
+              <Link href="/products">
+                <motion.p
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+
+                  className="inline-block h-full px-4 py-3 bg-transparent border-2 border-white  text-white  rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl hover:bg-white/10 transition-all "
+                >
+                  View Catalog
+                </motion.p>
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -1,7 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { Link, MessageCircle, X } from 'lucide-react';
 
 export default function WhatsAppChat() {
   const [showWhatsApp, setShowWhatsApp] = useState(false);
@@ -11,7 +11,7 @@ export default function WhatsAppChat() {
   const message = "Hi! I'm interested in your paper cups"
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-20 right-2 z-50">
       <AnimatePresence>
         {showWhatsApp && (
           <motion.div
@@ -45,14 +45,14 @@ export default function WhatsAppChat() {
               Hi there! Have questions about our products? We're here to help!
             </p>
 
-            <a
+            <Link
               href={`https://wa.me/${number}?text=${message}`}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-xl text-center hover:shadow-lg transition-shadow"
             >
               Start Chat on WhatsApp
-            </a>
+            </Link>
 
             <p className="text-xs text-slate-500 mt-3 text-center">
               Usually replies within minutes
@@ -118,14 +118,6 @@ export default function WhatsAppChat() {
             )}
           </AnimatePresence>
 
-          <motion.div
-            className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.5, type: 'spring' }}
-          >
-            <span className="text-xs font-bold text-white">1</span>
-          </motion.div>
 
           <motion.div
             className="absolute inset-0 rounded-full bg-green-500"

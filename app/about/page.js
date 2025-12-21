@@ -6,6 +6,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import CountUp from '../../components/CountUp';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function About() {
   const titleRef = useRef(null);
@@ -326,14 +327,15 @@ export default function About() {
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Join thousands of businesses worldwide who trust EcoCups Global for their paper cup needs
             </p>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="/contact"
-              className="inline-block h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl hover:bg-white/10 transition-all "
-            >
-              Get Started Today
-            </motion.a>
+            <Link href="/contact">
+              <motion.p
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl hover:bg-white/10 transition-all "
+              >
+                Get Started Today
+              </motion.p>
+            </Link>
           </motion.div>
         </div>
       </section>

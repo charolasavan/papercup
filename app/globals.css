@@ -63,3 +63,8 @@ main {
   height: 50px;
   border-radius: 50%;
 }
+
+
+/* h1, h2, h3, p, span {
+  user-select: none;
+} */

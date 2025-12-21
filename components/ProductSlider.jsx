@@ -3,7 +3,9 @@ import gsap from 'gsap';
 import Image from 'next/image';
 // import { Draggable } from 'gsap/Draggable';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 // gsap.registerPlugin(Draggable);
 
@@ -214,14 +216,14 @@ const ProductSlider = () => {
       </div>
 
       <div className="text-center mt-8 md:mt-12 px-4">
-        <a
+        <Link
           href="/products"
           // className="inline-block px-5 md:px-8 py-3 md:py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-base md:text-lg hover:shadow-lg transition-all hover:scale-105"
           className='inline-block h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all '
-
         >
           View All Products
-        </a>
+        </Link>
+
       </div>
     </section>
   );

@@ -1,32 +1,69 @@
 'use client';
+
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { Search, Filter } from 'lucide-react';
 import Image from 'next/image';
 import products from '../../public/assets/productDetail';
 
+const ITEMS_PER_LOAD = 8;
 
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
+  const loadMoreRef = useRef(null);
+
   const categories = [
     { id: 'all', name: 'All' },
     { id: 'single', name: 'Single Wall' },
     { id: 'double', name: 'Double Wall' },
     { id: 'ripple', name: 'Ripple Wall' },
+    { id: 'Bowl', name: 'Paper Bowl' },
+    { id: 'FoodBox', name: 'Food Box' },
+    { id: 'FoodTray', name: 'Food Tray' },
   ];
 
+  // Memoized filtered products
+  const filteredProducts = useMemo(() => {
+    return products.filter(product => {
+      const matchesCategory =
+        selectedCategory === 'all' || product.category === selectedCategory;
+      const matchesSearch =
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
 
+  // Reset visible count on filter/search change
+  useEffect(() => {
+    setVisibleCount(ITEMS_PER_LOAD);
+  }, [selectedCategory, searchQuery]);
 
-  const filteredProducts = products.filter(product => {
-    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  // Infinite scroll observer
+  useEffect(() => {
+    if (!loadMoreRef.current) return;
+    if (visibleCount >= filteredProducts.length) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleCount(prev =>
+            Math.min(prev + ITEMS_PER_LOAD, filteredProducts.length)
+          );
+        }
+      },
+      { rootMargin: '200px' }
+    );
+
+    observer.observe(loadMoreRef.current);
+
+    return () => observer.disconnect();
+  }, [filteredProducts.length, visibleCount]);
 
   return (
-    <main className='min-h-screen pt-24'>
+    <main className="min-h-screen pt-24">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-500 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -39,32 +76,30 @@ function Products() {
             }}
           />
         </div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Our Products
-            </h1>
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: '80px' }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-24 h-1 bg-white mx-auto mb-6" />
-            <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
-              Premium quality paper cups for every business need
-            </p>
-          </motion.div>
+            Our Products
+          </motion.h1>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: '80px' }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-24 h-1 bg-white mx-auto mb-6"
+          />
+          <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
+            Premium quality paper cups for every business need
+          </p>
         </div>
       </section>
 
-      <section className='py-20 bg-gradient-to-br from-gray-50 to-white'>
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 lg:px-8">
-
-          {/* Search Bar */}
+          {/* Search */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,8 +117,8 @@ function Products() {
               />
             </div>
           </motion.div>
-          {/* <img src="/images/productImages/singleWall/cup_1.png" width="200" /> */}
-          {/* Filter Buttons */}
+
+          {/* Filters */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,10 +133,11 @@ function Products() {
                   onClick={() => setSelectedCategory(category.id)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all whitespace-nowrap ${selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-green-600 to-emerald-500 text-white '
-                    : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
-                    }`}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all whitespace-nowrap ${
+                    selectedCategory === category.id
+                      ? 'bg-gradient-to-r from-green-600 to-emerald-500 text-white '
+                      : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
+                  }`}
                 >
                   {category.name}
                 </motion.button>
@@ -109,6 +145,7 @@ function Products() {
             </div>
           </motion.div>
 
+          {/* Product Grid */}
           <AnimatePresence mode="wait">
             {filteredProducts.length > 0 ? (
               <motion.div
@@ -118,44 +155,36 @@ function Products() {
                 exit={{ opacity: 0 }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
               >
-                {filteredProducts.map((product, index) => (
+                {filteredProducts.slice(0, visibleCount).map((product, index) => (
                   <motion.div
                     key={`${selectedCategory}-${product.id}`}
                     initial={{ x: 0, opacity: 0, y: 100 }}
-                    whileInView={{ x: 0, y: 0, opacity: 1, }}
+                    whileInView={{ x: 0, y: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    // animate={{ x: 0, opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1, }}
-                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl  overflow-hidden group"
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden group"
                   >
-                    {/* Product Image */}
-                    <div className="group relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <div className="group relative w-full aspect-[1/1] overflow-hidden rounded-lg bg-gray-100">
                       <Image
                         src={product.image}
                         alt={product.name}
-                        fill={true}
+                        fill
                         loading="lazy"
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                       />
-
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent 
-                  opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>
 
-
-                    {/* Product Details */}
                     <div className="p-5">
                       <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 min-h-[3.5rem]">
-                        <span class="px-2 py-0.5 bg-green-100 text-green-700 text-sm font-bold rounded">
+                        <span className="px-2 py-0.5 bg-green-100 text-green-700 text-sm font-bold rounded">
                           {product.size}
-                        </span> - {product.name}
-
+                        </span>{' '}
+                        - {product.name}
                       </h3>
-
                       <p className="text-slate-600 text-sm mb-4 line-clamp-2">
                         {product.description}
                       </p>
-                      {/* Features */}
                       <div className="space-y-1.5 mb-4">
                         {product.features.slice(0, 3).map((feature, idx) => (
                           <div key={idx} className="flex items-start gap-2">
@@ -205,6 +234,9 @@ function Products() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Trigger for infinite scroll */}
+          <div ref={loadMoreRef} className="h-1"></div>
         </div>
       </section>
     </main>

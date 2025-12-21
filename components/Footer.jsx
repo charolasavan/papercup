@@ -41,40 +41,39 @@ const Footer = () => {
             <div className="flex space-x-4">
 
               {/* Facebook Icon */}
-              <motion.a
-                whileHover={{ scale: 1.1 }}
+
+              <Link
                 href="#"
-                className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors"
+                className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors hover:scale-[1.1] "
               >
                 <span className="sr-only">Facebook</span>
                 <svg className="w-5 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
-              </motion.a>
+              </Link>
 
               {/* LinkedIn Icon */}
-              <motion.a
-                whileHover={{ scale: 1.1 }}
+              <Link
                 href="#"
-                className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors"
+                className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors hover:scale-[1.1]"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg className="w-5 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22.225 0H1.775C.794 0 0 .794 0 1.775v20.45c0 .981.794 1.775 1.775 1.775h20.45c.981 0 1.775-.794 1.775-1.775V1.775C24 .794 23.206 0 22.225 0zM7.05 19.313H3.59V9.62h3.46v9.693zm-1.73-11.41c-1.15 0-2.04-.877-2.04-1.976 0-1.099.89-1.976 2.04-1.976 1.15 0 2.04.877 2.04 1.976 0 1.099-.89 1.976-2.04 1.976zm14.97 11.41h-3.46v-5.269c0-1.252-.446-2.107-1.557-2.107-1.234 0-1.89.89-1.89 2.06v5.316h-3.46V9.62h3.46v1.281h.048c.455-.858 1.284-1.73 2.74-1.73 2.016 0 3.556 1.307 3.556 4.099v6.041z" />
                 </svg>
-              </motion.a>
+              </Link>
 
               {/* Instagram Icon */}
-              <motion.a
-                whileHover={{ scale: 1.1 }}
+              <Link
+
                 href="#"
-                className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors"
+                className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors scale-[1.1]"
               >
                 <span className="sr-only">Instagram</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-6" fill="currentColor" viewBox="0 0 250 250">
                   <path d="M160,128a32,32,0,1,1-32-32A32.03667,32.03667,0,0,1,160,128Zm68-44v88a56.06353,56.06353,0,0,1-56,56H84a56.06353,56.06353,0,0,1-56-56V84A56.06353,56.06353,0,0,1,84,28h88A56.06353,56.06353,0,0,1,228,84Zm-52,44a48,48,0,1,0-48,48A48.05436,48.05436,0,0,0,176,128Zm16-52a12,12,0,1,0-12,12A12,12,0,0,0,192,76Z" />
                 </svg>
-              </motion.a>
+              </Link>
 
             </div>
 

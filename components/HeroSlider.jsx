@@ -7,6 +7,7 @@ import Banner_1 from '../public/images/BannerSliderImages/Banner_1.webp';
 import Banner_2 from '../public/images/BannerSliderImages/Banner_2.webp';
 import Banner_3 from '../public/images/BannerSliderImages/Banner_3.webp';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 const slides = [
   {
@@ -135,24 +136,28 @@ const HeroSlider = ({ scrollToNextSection }) => {
 
                 {/* Buttons for navigating to products or contact page */}
                 <div className="flex flex-wrap gap-4">
-                  <motion.a
+                  <Link href="/products">
+                    <motion.p
 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href="/products"
-                    className="h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center"
-                  >
-                    View Products
-                  </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href="/contact"
-                    // className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-lg border-2 border-white/30 hover:bg-white/20 transition-all"
-                    className="px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-[18px] md:text-lg border-2 border-white/30 hover:bg-white/20 transition-all"
-                  >
-                    Contact Us
-                  </motion.a>
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+
+                      className="h-full px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-full font-semibold text-[18px] md:text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center"
+                    >
+                      View Products
+                    </motion.p>
+                  </Link>
+                  <Link href="/contact">
+                    <motion.p
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+
+                      // className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-lg border-2 border-white/30 hover:bg-white/20 transition-all"
+                      className="px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-[18px] md:text-lg border-2 border-white/30 hover:bg-white/20 transition-all"
+                    >
+                      Contact Us
+                    </motion.p>
+                  </Link>
                 </div>
               </div>
             </div>
