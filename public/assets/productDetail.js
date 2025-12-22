@@ -386,26 +386,26 @@ const products = [
   },
 
   // ================= FOOD BOXES =================
+  // {
+  //   id: 43,
+  //   name: "Food Box",
+  //   size: "500 ml",
+  //   category: "FoodBox",
+  //   description: "Small food box for takeaway or meal prep.",
+  //   features: ["Leak-resistant", "Eco-friendly", "Microwave safe", "Durable"],
+  //   image: "/images/productImages/FoodBox/img1.png",
+  // },
+  // {
+  //   id: 44,
+  //   name: "Food Box",
+  //   size: "750 ml",
+  //   category: "FoodBox",
+  //   description: "Medium food box for lunch or snack portions.",
+  //   features: ["Sturdy design", "Heat-resistant", "Eco-safe", "Compact size"],
+  //   image: "/images/productImages/FoodBox/img_2.jpg",
+  // },
   {
     id: 43,
-    name: "Food Box",
-    size: "500 ml",
-    category: "FoodBox",
-    description: "Small food box for takeaway or meal prep.",
-    features: ["Leak-resistant", "Eco-friendly", "Microwave safe", "Durable"],
-    image: "/images/productImages/FoodBox/img1.png",
-  },
-  {
-    id: 44,
-    name: "Food Box",
-    size: "750 ml",
-    category: "FoodBox",
-    description: "Medium food box for lunch or snack portions.",
-    features: ["Sturdy design", "Heat-resistant", "Eco-safe", "Compact size"],
-    image: "/images/productImages/FoodBox/img_2.jpg",
-  },
-  {
-    id: 45,
     name: "Food Box",
     size: "1000 ml",
     category: "FoodBox",
@@ -414,7 +414,7 @@ const products = [
     image: "/images/productImages/FoodBox/img_3.JPG",
   },
   {
-    id: 46,
+    id: 44,
     name: "Food Box",
     size: "1200 ml",
     category: "FoodBox",
