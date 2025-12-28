@@ -1,13 +1,13 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Link, MessageCircle, X } from 'lucide-react';
+import { MessageCircle, X } from 'lucide-react';
+import Link from 'next/link';
 
 export default function WhatsAppChat() {
   const [showWhatsApp, setShowWhatsApp] = useState(false);
   const [hovered, setHovered] = useState(false);
   const number = '+919512121018'
-  // 9512121018
   const message = "Hi! I'm interested in your paper cups"
 
   return (
