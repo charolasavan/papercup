@@ -16,7 +16,7 @@ export default function WhatsAppChat() {
         {showWhatsApp && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }} 
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             className="mb-4 bg-white rounded-2xl shadow-2xl p-6 w-80"
           >

@@ -170,12 +170,12 @@ const schemaData = {
         "Premium quality biodegradable paper cups available in single wall, double wall, and ripple wall designs",
       brand: { "@type": "Brand", name: "Fortis International" },
       manufacturer: { "@id": "https://eco-papercup.vercel.app/#manufacturer" },
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-        offerCount: "6",
-      },
+      // offers: {
+      //   "@type": "AggregateOffer",
+      //   priceCurrency: "USD",
+      //   availability: "https://schema.org/InStock",
+      //   offerCount: "6",
+      // },
     },
     {
       "@type": "BreadcrumbList",

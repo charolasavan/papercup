@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import GetInTouch from '../../components/GetInTouch';
 
 const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
@@ -85,13 +86,13 @@ function Contact() {
     }
   };
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '+919512121018';
-    const message = encodeURIComponent(
-      'Hello! I would like to inquire about your eco-friendly products.'
-    );
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-  };
+  // const handleWhatsAppClick = () => {
+  //   const phoneNumber = '+919512121018';
+  //   const message = encodeURIComponent(
+  //     'Hello! I would like to inquire about your eco-friendly products.'
+  //   );
+  //   window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  // };
 
 
   return (
@@ -201,7 +202,7 @@ function Contact() {
                   Quick WhatsApp Contact
                 </h3>
                 <p className="text-gray-600 mb-4">Get instant response on WhatsApp with our complete product and service information.</p>
-                <button
+                {/* <button
                   className="inline-flex items-center gap-2 bg-green-600 text-white hover:bg-green-700 px-6 py-3 rounded-lg font-medium transition-colors"
                   onClick={handleWhatsAppClick}
                 >
@@ -209,7 +210,8 @@ function Contact() {
                     <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
                   </svg>
                   Get In Touch
-                </button>
+                </button> */}
+                <GetInTouch />
               </div>
             </div>
             <div className="h-full" style={{ opacity: 1, transform: 'none' }}>
