@@ -73,7 +73,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: "Wzyy88U-bGUIhTdMHsnnGP_QZDIrPapeh0lKmi1JDHOI",
+    google: "BkeYd-0tBAoAZxknP0ce33a7EYP0ItWn6uO16bmqLAw",
   },
   category: "Manufacturing",
 };
@@ -84,12 +84,12 @@ const schemaData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://fortisinternational1.com//#organization",
+      "@id": "https://fortisinternational1.com/#organization",
       name: "Fortis International",
       url: "https://fortisinternational1.com/",
       logo: {
         "@type": "ImageObject",
-        url: "https://fortisinternational1.com//logo.png",
+        url: "https://fortisinternational1.com/logo.png",
         width: 250,
         height: 60,
       },
@@ -108,24 +108,24 @@ const schemaData = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://fortisinternational1.com//#website",
+      "@id": "https://fortisinternational1.com/#website",
       url: "https://fortisinternational1.com/",
       name: "Fortis International - Paper Cups Manufacturer",
       description: "Premium eco-friendly paper cups manufacturer and exporter",
-      publisher: { "@id": "https://fortisinternational1.com//#organization" },
+      publisher: { "@id": "https://fortisinternational1.com/#organization" },
       potentialAction: {
         "@type": "SearchAction",
         target:
-          "https://fortisinternational1.com//search?q={search_term_string}",
+          "https://fortisinternational1.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     },
     {
       "@type": "Manufacturer",
-      "@id": "https://fortisinternational1.com//#manufacturer",
+      "@id": "https://fortisinternational1.com/#manufacturer",
       name: "Fortis International",
       brand: { "@type": "Brand", name: "Fortis International" },
-      image: "https://fortisinternational1.com//og-image.jpg",
+      image: "https://fortisinternational1.com/og-image.jpg",
       address: {
         "@type": "PostalAddress",
         streetAddress: "2nd Floor, Super Market 2, Shop 6, Mahendranagar",
@@ -163,7 +163,7 @@ const schemaData = {
     },
     {
       "@type": "Product",
-      "@id": "https://fortisinternational1.com//#product",
+      "@id": "https://fortisinternational1.com/#product",
       name: "Eco-Friendly Paper Cups",
       description:
         "Premium quality biodegradable paper cups available in single wall, double wall, and ripple wall designs",
@@ -178,7 +178,7 @@ const schemaData = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://fortisinternational1.com//#breadcrumb",
+      "@id": "https://fortisinternational1.com/#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
@@ -214,9 +214,9 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
 
-        {/* ✅ Google Search Console Verification */}
-        <meta name="google-site-verification"
-          content="BkeYd-0tBAoAZxknP0ce33a7EYP0ItWn6uO16bmqLAw" />
+        // {/* ✅ Google Search Console Verification */}
+        {/* // <meta name="google-site-verification" */}
+        {/* //   content="BkeYd-0tBAoAZxknP0ce33a7EYP0ItWn6uO16bmqLAw" /> */}
 
 
       </head>
