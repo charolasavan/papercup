@@ -1,7 +1,6 @@
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://eco-papercup.vercel.app',
-    generateRobotsTxt: true,
-    changefreq: 'daily',
-    priority: 0.7,
-    sitemapSize: 5000,
-}
+  siteUrl: 'https://fortisinternational1.com/',
+  generateRobotsTxt: true, // (optional) generate robots.txt
+  sitemapSize: 5000,
+};

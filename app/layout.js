@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppChat from "../components/WhatsAppChat";
-import ScrollWrapper from "../components/ScrollWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,14 +30,14 @@ export const metadata = {
     "double wall paper cups",
     "ripple wall paper cups",
   ],
-  metadataBase: new URL("https://eco-papercup.vercel.app"),
+  metadataBase: new URL("https://fortisinternational1.com/"),
   authors: [{ name: "Fortis International" }],
   openGraph: {
     title:
       "Fortis International – Premium Paper Cups Manufacturer & Global Exporter",
     description:
       "ISO certified manufacturer of eco-friendly paper cups. Custom printing, fast delivery to 5+ countries. Single, double & ripple wall cups. Request quote today!",
-    url: "https://eco-papercup.vercel.app",
+    url: "https://fortisinternational1.com/",
     siteName: "Fortis International",
     type: "website",
     locale: "en_US",
@@ -60,7 +59,7 @@ export const metadata = {
     creator: "@FortisIntl", // Add your handle if available
   },
   alternates: {
-    canonical: "https://eco-papercup.vercel.app",
+    canonical: "https://fortisinternational1.com/",
   },
   robots: {
     index: true,
@@ -85,12 +84,12 @@ const schemaData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://eco-papercup.vercel.app/#organization",
+      "@id": "https://fortisinternational1.com//#organization",
       name: "Fortis International",
-      url: "https://eco-papercup.vercel.app",
+      url: "https://fortisinternational1.com/",
       logo: {
         "@type": "ImageObject",
-        url: "https://eco-papercup.vercel.app/logo.png",
+        url: "https://fortisinternational1.com//logo.png",
         width: 250,
         height: 60,
       },
@@ -109,24 +108,24 @@ const schemaData = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://eco-papercup.vercel.app/#website",
-      url: "https://eco-papercup.vercel.app",
+      "@id": "https://fortisinternational1.com//#website",
+      url: "https://fortisinternational1.com/",
       name: "Fortis International - Paper Cups Manufacturer",
       description: "Premium eco-friendly paper cups manufacturer and exporter",
-      publisher: { "@id": "https://eco-papercup.vercel.app/#organization" },
+      publisher: { "@id": "https://fortisinternational1.com//#organization" },
       potentialAction: {
         "@type": "SearchAction",
         target:
-          "https://eco-papercup.vercel.app/search?q={search_term_string}",
+          "https://fortisinternational1.com//search?q={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     },
     {
       "@type": "Manufacturer",
-      "@id": "https://eco-papercup.vercel.app/#manufacturer",
+      "@id": "https://fortisinternational1.com//#manufacturer",
       name: "Fortis International",
       brand: { "@type": "Brand", name: "Fortis International" },
-      image: "https://eco-papercup.vercel.app/og-image.jpg",
+      image: "https://fortisinternational1.com//og-image.jpg",
       address: {
         "@type": "PostalAddress",
         streetAddress: "2nd Floor, Super Market 2, Shop 6, Mahendranagar",
@@ -138,7 +137,7 @@ const schemaData = {
       geo: { "@type": "GeoCoordinates", latitude: "22.8173", longitude: "70.8378" },
       telephone: "+91-95121-21018",
       email: "fortisinternational4@gmail.com",
-      url: "https://eco-papercup.vercel.app",
+      url: "https://fortisinternational1.com/",
       priceRange: "$$",
       openingHoursSpecification: [
         {
@@ -164,12 +163,12 @@ const schemaData = {
     },
     {
       "@type": "Product",
-      "@id": "https://eco-papercup.vercel.app/#product",
+      "@id": "https://fortisinternational1.com//#product",
       name: "Eco-Friendly Paper Cups",
       description:
         "Premium quality biodegradable paper cups available in single wall, double wall, and ripple wall designs",
       brand: { "@type": "Brand", name: "Fortis International" },
-      manufacturer: { "@id": "https://eco-papercup.vercel.app/#manufacturer" },
+      manufacturer: { "@id": "https://fortisinternational1.com//#manufacturer" },
       // offers: {
       //   "@type": "AggregateOffer",
       //   priceCurrency: "USD",
@@ -179,13 +178,13 @@ const schemaData = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://eco-papercup.vercel.app/#breadcrumb",
+      "@id": "https://fortisinternational1.com//#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://eco-papercup.vercel.app",
+          item: "https://fortisinternational1.com/",
         },
       ],
     },
@@ -214,19 +213,18 @@ export default function RootLayout({ children }) {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+
+        {/* ✅ Google Search Console Verification */}
+        <meta name="google-site-verification"
+          content="BkeYd-0tBAoAZxknP0ce33a7EYP0ItWn6uO16bmqLAw" />
+
+
       </head>
       <body className={inter.className}>
-        {/* <ScrollWrapper> */}
-
-
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <WhatsAppChat />
-        {/* </ScrollWrapper> */}
-        {/* Optional: Enable when needed */}
-        {/* <Analytics /> */}
-        {/* <SpeedInsights /> */}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <WhatsAppChat />
       </body>
     </html>
   );

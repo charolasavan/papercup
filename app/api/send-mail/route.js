@@ -111,7 +111,7 @@ export async function POST(req) {
             subject: `New Contact Form Submission: ${safeSubject}`,
             html: `
         <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
-          <img src="https://eco-papercup.vercel.app/MailLogo.png" alt="Logo"  style="display:block;border:0;outline:none;text-decoration:none;" />
+          <img src="https://fortisinternational1.com//MailLogo.png" alt="Logo"  style="display:block;border:0;outline:none;text-decoration:none;" />
           <h2 style="color: #2F855A;">📩 New Contact Form Submission</h2>
           <p>You have received a new message from your website contact form:</p>
 

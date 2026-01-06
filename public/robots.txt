@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://fortisinternational1.com/
+
+# Sitemaps
+Sitemap: https://fortisinternational1.com/sitemap.xml
