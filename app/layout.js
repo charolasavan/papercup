@@ -215,8 +215,13 @@ export default function RootLayout({ children }) {
         />
 
         // {/* ✅ Google Search Console Verification */}
+<<<<<<< HEAD
         {/* // <meta name="google-site-verification" */}
         {/* //   content="BkeYd-0tBAoAZxknP0ce33a7EYP0ItWn6uO16bmqLAw" /> */}
+=======
+        // <meta name="google-site-verification"
+        //   content="BkeYd-0tBAoAZxknP0ce33a7EYP0ItWn6uO16bmqLAw" />
+>>>>>>> c32c585759b253b046a4a3f7edf6c831f7096e0f
 
 
       </head>
